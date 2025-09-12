@@ -1,0 +1,74 @@
+version: 2
+updates:
+  # Monitor all Gradle build files in the root and submodules
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    # Enable security updates
+    ignore:
+      - dependency-name: "org.jetbrains.kotlin:kotlin-reflect"
+        update-types: ["version-update:semver-major"]
+
+  # Monitor Gradle files in all submodules
+  - package-ecosystem: "gradle"
+    directory: "/app"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+  - package-ecosystem: "gradle"
+    directory: "/core-module"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+  - package-ecosystem: "gradle"
+    directory: "/feature-module"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+  - package-ecosystem: "gradle"
+    directory: "/oracle-drive-integration"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+  - package-ecosystem: "gradle"
+    directory: "/datavein-oracle-native"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+  - package-ecosystem: "gradle"
+    directory: "/collab-canvas"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+  - package-ecosystem: "gradle"
+    directory: "/colorblendr"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+  - package-ecosystem: "gradle"
+    directory: "/sandbox-ui"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+  - package-ecosystem: "gradle"
+    directory: "/secure-comm"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+  # Add more submodules as needed
+
+  # Monitor GitHub Actions workflows
+  - package-ecosystem: "github-actions"
+    directory: "/.github/workflows"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
