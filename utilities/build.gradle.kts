@@ -2,14 +2,14 @@ plugins {
     // JVM library setup
     id("java-library")
     kotlin("jvm")
+    id("org.jetbrains.kotlin.plugin.compose")
 
     // Additional tooling
     id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
 }
-apply(plugin = "org.jetbrains.compose")
-apply(plugin = "org.jetbrains.kotlin.plugin.compose")
+
 
 group = "dev.aurakai.auraframefx.utilities"
 version = "1.0.0"
