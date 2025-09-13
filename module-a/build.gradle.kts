@@ -1,6 +1,5 @@
 // GENESIS PROTOCOL - MODULE A
 plugins {
-    id("org.jetbrains.kotlin.android") // Add this line to explicitly apply the Kotlin Android plugin
     id("genesis.android.library")
     id("genesis.android.compose")
     alias(libs.plugins.ksp)

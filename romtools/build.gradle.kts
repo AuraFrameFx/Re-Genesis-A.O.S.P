@@ -2,8 +2,6 @@ plugins {
     id("com.android.library")
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.dokka)
-    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -20,7 +18,7 @@ android {
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(23)
 }
 
 val romToolsOutputDirectory: DirectoryProperty =
@@ -56,8 +54,8 @@ dependencies {
     androidTestImplementation(platform(libs.androidx.compose.bom))
     // androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
     implementation(kotlin("stdlib-jdk8"))
-    implementation("androidx.compose.material:material-icons-extended")
-    implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.hilt.navigation.compose)
 }
 
 // Copy task
@@ -79,14 +77,4 @@ tasks.named("build") { dependsOn("verifyRomTools") }
 
 tasks.register("romStatus") {
     group = "aegenesis"; doLast { println("🛠️ ROM TOOLS - Ready (Java 24)") }
-}
-
-tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
-    dokkaSourceSets {
-        named("main") {
-            sourceRoots.from(file("src/main/java"))
-            sourceRoots.from(file("src/main/kotlin"))
-            sourceRoots.from(file("src/main/res"))
-        }
-    }
 }

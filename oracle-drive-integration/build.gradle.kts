@@ -4,8 +4,6 @@
 plugins {
     id("genesis.android.library")
     alias(libs.plugins.ksp)
-    id("org.jetbrains.kotlin.android") // Add this line to explicitly apply the Kotlin Android plugin
-
 }
 
 android {

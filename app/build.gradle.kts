@@ -8,7 +8,6 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     id("org.openapi.generator") version "7.15.0"
-    alias(libs.plugins.kotlin.android)
 }
 
 android {

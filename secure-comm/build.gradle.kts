@@ -3,10 +3,8 @@
 
 plugins {
     id("genesis.android.library")
-    id("genesis.android.native")
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
 }
 
 android {

@@ -5,12 +5,6 @@ plugins {
     id("com.android.library")
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.dokka)
-    id("org.jetbrains.kotlin.android") // Add this line to explicitly apply the Kotlin Android plugin
-
-    // The Kotlin Android plugin is typically applied by a convention plugin.
-    // If you apply it manually, it would be here:
-    // id("org.jetbrains.kotlin.android")
 }
 kotlin {
     jvmToolchain(24)

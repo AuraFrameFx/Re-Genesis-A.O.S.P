@@ -4,8 +4,6 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.dokka)
-    id("org.jetbrains.kotlin.android") // Add this line to explicitly apply the Kotlin Android plugin
 
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
@@ -53,14 +51,4 @@ dependencies {
 
 tasks.register("sandboxStatus") {
     group = "aegenesis"; doLast { println("🧪 SANDBOX UI - Ready (Java 24)") }
-}
-
-tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
-    dokkaSourceSets {
-        named("main") {
-            sourceRoots.from(file("src/main/java"))
-            sourceRoots.from(file("src/main/kotlin"))
-            sourceRoots.from(file("src/main/res"))
-        }
-    }
 }

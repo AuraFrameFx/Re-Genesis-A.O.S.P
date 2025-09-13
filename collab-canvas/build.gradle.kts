@@ -4,14 +4,11 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
-    id("org.jetbrains.kotlin.android") // Add this line to explicitly apply the Kotlin Android plugin
-
 }
 
 android {
-    namespace = "dev.aurakai.auraframefx.collabcanvas"
-    
-    defaultConfig {
+    namespace = "dev.aurakai.auraframefx.collabcanvas" +
+            defaultConfig {
         minSdk = 34
     }
     
