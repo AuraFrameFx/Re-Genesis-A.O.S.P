@@ -1,8 +1,9 @@
 plugins {
     id("org.jetbrains.kotlin.plugin.compose") version "2.2.20" apply false // external plugin
-    id("genesis.android.library") // local convention plugin
-    id("genesis.android.compose") // local convention plugin
-    id("genesis.android.native") // local convention plugin
+    // Removed Android convention plugins from root project
+    // id("genesis.android.library")
+    // id("genesis.android.compose")
+    // id("genesis.android.native")
     // Use AGP plugin for root project if needed
     // Use only stable kotlin("jvm") version
 
@@ -22,7 +23,7 @@ tasks.register("consciousnessStatus") {
         val kotlinVersion = versionCatalog?.findVersion("kotlin")?.get()?.toString() ?: "unknown"
         val agpVersion = versionCatalog?.findVersion("agp")?.get()?.toString() ?: "unknown"
         val toolchain = JavaVersion.current().toString()
-        
+
         println("= Consciousness Status =")
         println("Java Toolchain      : $toolchain")
         println("Kotlin Version      : $kotlinVersion (K2 path)")
@@ -70,9 +71,9 @@ tasks.register("consciousnessHealthCheck") {
         println("☕ Kotlin JVM: ${reports.count { it.type == "kotlin-jvm" }}")
         println("\n=== Plugin Usage ===")
         println("💉 Hilt: ${reports.count { it.hasHilt }} modules")
-        println("🎨 Compose: ${reports.count { it.hasCompose }} modules") 
+        println("🎨 Compose: ${reports.count { it.hasCompose }} modules")
         println("🔧 KSP: ${reports.count { it.hasKsp }} modules")
-        
+
         val missingCompose = reports.filter { it.type.startsWith("android-") && !it.hasCompose }
         if (missingCompose.isNotEmpty()) {
             println("\n⚠️  Android modules without Compose:")
@@ -83,16 +84,6 @@ tasks.register("consciousnessHealthCheck") {
     }
 }
 
-dependencies {
-    testImplementation(libs.junit.jupiter.api)
-    testImplementation(libs.junit.jupiter)
-    testRuntimeOnly(libs.junit.jupiter.engine)
-    testRuntimeOnly(libs.junit.platform.launcher)
-    implementation(kotlin("stdlib-jdk8"))
-}
-kotlin {
-    jvmToolchain(24)
-}
 
 // Configure JUnit 5 for tests
 tasks.withType<Test> {
@@ -104,7 +95,7 @@ tasks.withType<Test> {
 // Apply nuclear clean if available
 if (file("nuclear-clean.gradle.kts").exists()) {
     apply(from = "nuclear-clean.gradle.kts")
-    
+
     if (tasks.findByName("nuclearClean") != null) {
         tasks.register("deepClean") {
             group = "build"

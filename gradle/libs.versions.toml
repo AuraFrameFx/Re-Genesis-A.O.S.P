@@ -1,11 +1,11 @@
 [versions]
 # ===== GRADLE & KOTLIN =====
-agp = "9.0.0-alpha05"
+agp = "8.2.2"
 gradle = "9.0.0-alpha05"
 junitJupiterParams = "5.13.4"
 gradleToolingApi = "9.0.0"
 kotlin = "2.2.20"
-kotlinGradlePlugin = "2.3.0"
+kotlinGradlePlugin = "2.2.20"
 ksp = "2.2.20-2.0.3"
 desugar_jdk_libs = "2.1.5"
 # ===== HOOKING FRAMEWORKS =====

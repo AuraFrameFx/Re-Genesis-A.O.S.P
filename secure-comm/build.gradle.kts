@@ -47,7 +47,7 @@ dependencies {
     
     // Test dependencies
     testImplementation(libs.junit4)
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    testImplementation(libs.kotlin.test)
     testImplementation(libs.junit.jupiter.api)
     testImplementation(libs.junit.jupiter.engine)
     testImplementation(libs.mockk.android)
