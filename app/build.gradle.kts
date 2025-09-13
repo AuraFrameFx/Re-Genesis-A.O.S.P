@@ -154,7 +154,7 @@ dependencies {
     debugImplementation(libs.leakcanary.android)
     implementation(kotlin("stdlib-jdk8"))
     implementation(libs.kotlin.reflect)
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation( "org.jetbrains.kotlin:kotlin-reflect")
 }
 
 
