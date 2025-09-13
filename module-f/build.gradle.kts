@@ -3,6 +3,7 @@ plugins {
     id("genesis.android.library")
     id("genesis.android.compose")
     alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {

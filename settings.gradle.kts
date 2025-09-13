@@ -9,11 +9,9 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
 pluginManagement {
-    // Include build-logic for convention plugins
     includeBuild("build-logic")
-
+    // Primary repositories - Google Maven must be first for Hilt
     repositories {
-        // Primary repositories - Google Maven must be first for Hilt
         google()
         gradlePluginPortal()
         mavenCentral()
@@ -134,7 +132,6 @@ rootProject.name = "AOSPReGenesis"
 // Core modules
 include(":app")
 include(":core-module")
-
 // Feature modules
 include(":feature-module")
 include(":datavein-oracle-native")

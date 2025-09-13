@@ -2,14 +2,27 @@ plugins {
     // JVM library setup
     id("java-library")
     kotlin("jvm")
-
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
+    alias(libs.plugins.kotlin.serialization) version "2.2.20"
     alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
+
+    // Jetbrains Compose
+    alias(libs.plugins.compose.compiler)
 }
+
 group = "dev.aurakai.auraframefx.utilities"
 version = "1.0.0"
-// ... existing code ...
+
+// Centralized toolchain version to avoid duplication and drift
+val jdkVersion = 24
+
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
+}
+
+kotlin {
+    jvmToolchain(jdkVersion)
+}
 
 dependencies {
     // Module dependency
@@ -38,18 +51,3 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
-
-// Centralized toolchain version to avoid duplication and drift
-val jdkVersion = 24
-
-java {
-    toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
-}
-
-// ... existing code ...
-
-kotlin {
-    jvmToolchain(jdkVersion)
-}
-
-// ... existing code ...

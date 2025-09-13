@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.spotless)
     `maven-publish`
     `java-library`
+    alias(libs.plugins.compose.compiler)
 }
 
 group = "dev.aurakai.auraframefx.list"

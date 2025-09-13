@@ -4,6 +4,9 @@ plugins {
     base
 }
 
+apply(plugin = "org.jetbrains.compose")
+apply(plugin = "org.jetbrains.kotlin.plugin.compose")
+
 // No dependencies needed for placeholder module
 
 tasks.register("placeholderInfo") {

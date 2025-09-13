@@ -4,9 +4,9 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     alias(libs.plugins.ksp)
-
-    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
+apply(plugin = "org.jetbrains.compose")
+apply(plugin = "org.jetbrains.kotlin.plugin.compose")
 
 android {
     namespace = "dev.aurakai.auraframefx.sandboxui"

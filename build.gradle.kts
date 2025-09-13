@@ -1,21 +1,11 @@
-// Apply plugins to the root project to avoid multiple loading warnings
 plugins {
-    // REMOVE JetBrains plugin aliases that are not available for 2.3.0
-    // alias(libs.plugins.kotlin.android) apply false
-    // alias(libs.plugins.kotlin.serialization) apply false
-    // alias(libs.plugins.kotlin.compose) apply false
-    // alias(libs.plugins.hilt) apply false
-    // alias(libs.plugins.ksp) apply false
-    // alias(libs.plugins.android.library) apply false
-    // alias(libs.plugins.android.application) apply false
-    // Instead, use only convention plugins and AGP plugins
-    id("genesis.android.application") apply false
-    id("genesis.android.library") apply false
-    id("genesis.android.compose") apply false
-    id("genesis.android.native") apply false
+    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20" apply false // external plugin
+    id("genesis.android.library") // local convention plugin
+    id("genesis.android.compose") // local convention plugin
+    id("genesis.android.native") // local convention plugin
     // Use AGP plugin for root project if needed
     // Use only stable kotlin("jvm") version
-    kotlin("jvm") version "2.2.20"
+
 }
 
 // Find version catalog

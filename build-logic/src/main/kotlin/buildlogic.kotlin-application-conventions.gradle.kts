@@ -4,18 +4,15 @@
  */
 
 plugins {
-    // Standard application plugin for executable JVM applications
-    application
-
-    // Apply Kotlin JVM plugin for all applications
+    id("application")
     id("org.jetbrains.kotlin.jvm")
 }
 
-// Configure the application plugin
-application {
-    // Main class will be set in the module's build.gradle.kts
-    // Example: mainClass.set("com.example.MainKt")
-}
+// Note: Do NOT use the application { ... } DSL in precompiled script plugins.
+// Set mainClass in your module's build.gradle.kts, e.g.:
+// application {
+//     mainClass.set("com.example.MainKt")
+// }
 
 // Configure test tasks
 tasks.named<Test>("test") {

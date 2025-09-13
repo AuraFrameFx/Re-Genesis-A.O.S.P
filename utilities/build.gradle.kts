@@ -8,6 +8,8 @@ plugins {
     alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
 }
+apply(plugin = "org.jetbrains.compose")
+apply(plugin = "org.jetbrains.kotlin.plugin.compose")
 
 group = "dev.aurakai.auraframefx.utilities"
 version = "1.0.0"
