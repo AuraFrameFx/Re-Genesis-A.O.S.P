@@ -28,6 +28,7 @@ dependencies {
     implementation("org.junit.jupiter:junit-jupiter-engine:5.10.0")
     implementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
     implementation("com.android.tools.build:gradle:9.0.0-alpha05")
+    implementation("org.jetbrains.compose.runtime:runtime:1.8.2") // Added Compose Runtime for compiler compatibility
     // Test dependencies
 
 }

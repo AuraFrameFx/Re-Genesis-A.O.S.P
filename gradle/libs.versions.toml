@@ -6,7 +6,7 @@ junitJupiterParams = "5.13.4"
 gradleToolingApi = "9.0.0"
 kotlin = "2.3.0"
 kotlinGradlePlugin = "2.3.0"
-ksp = "2.3.0-2.0.3"
+ksp = "2.0.0-1.0.20"
 desugar_jdk_libs = "2.1.5"
 # ===== HOOKING FRAMEWORKS =====
 multidex = "2.0.1"
