@@ -126,7 +126,7 @@ dependencyResolutionManagement {
 
 
 // ===== PROJECT IDENTIFICATION =====
-rootProject.name = "AOSPReGenesis"
+rootProject.name = "ReGenesis"
 
 // ===== MODULE INCLUSION =====
 // Core modules
