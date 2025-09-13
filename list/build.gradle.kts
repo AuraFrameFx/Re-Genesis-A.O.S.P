@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
     kotlin("jvm")
-    alias(libs.plugins.kotlin.serialization)
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
     `maven-publish`
@@ -20,7 +20,6 @@ java {
 kotlin {
     jvmToolchain(24)
     compilerOptions {
-        jvmTarget = JvmTarget.JVM_24
         languageVersion = KotlinVersion.KOTLIN_2_2
         apiVersion = KotlinVersion.KOTLIN_2_2
     }

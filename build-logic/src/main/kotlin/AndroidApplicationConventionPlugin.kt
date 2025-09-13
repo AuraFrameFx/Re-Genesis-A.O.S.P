@@ -25,7 +25,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.android.application")
-                apply("org.jetbrains.kotlin.plugin.compose")
+                apply("org.jetbrains.compose")
             }
 
             extensions.configure<ApplicationExtension> {

@@ -2,7 +2,7 @@
 plugins {
     id("com.android.library")
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     alias(libs.plugins.ksp)
 
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
@@ -14,13 +14,16 @@ android {
     defaultConfig { minSdk = 34 }
     buildFeatures { compose = true }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(24)
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+    }
 }
 
 dependencies {

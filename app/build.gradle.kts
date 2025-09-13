@@ -1,10 +1,8 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 // This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
-    alias(libs.plugins.android.application)
+    id("genesis.android.application")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     id("org.openapi.generator") version "7.15.0"
@@ -53,10 +51,14 @@ android {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
-}
-
-kotlin {
-    jvmToolchain(24)
+    kotlin {
+        jvmToolchain(24)
+        compilerOptions {
+            languageVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_2)
+            apiVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_2)
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+        }
+    }
 }
 
 openApiGenerate {
@@ -151,16 +153,6 @@ dependencies {
 
     // --- DEBUGGING ---
     debugImplementation(libs.leakcanary.android)
-    implementation(kotlin("stdlib-jdk8"))
-    implementation(libs.kotlin.reflect)
-    implementation( "org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.3.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:2.3.0")
 }
-
-
-// Ensure code generation runs before any Kotlin compilation
-tasks.withType<KotlinCompile>().configureEach {
-    dependsOn("openApiGenerate")
-}
-
-
-// Note: Uses Genesis convention plugins (genesis.android.application and genesis.android.hilt)

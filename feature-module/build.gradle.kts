@@ -23,7 +23,10 @@ android {
     }
 
     kotlin {
-        jvmToolchain(17)
+        jvmToolchain(24)
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+        }
     }
 
     buildFeatures {
@@ -63,8 +66,7 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation(kotlin("stdlib-jdk8"))
-}
+    implementation(kotlin("stdlib-jdk8"))}
 
 tasks.register("featureStatus") {
     group = "aegenesis"

@@ -1,6 +1,6 @@
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.serialization)
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     alias(libs.plugins.ksp)
 }
 
@@ -12,13 +12,16 @@ android {
         minSdk = 34
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 }
 
 kotlin {
-    jvmToolchain(23)
+    jvmToolchain(24)
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+    }
 }
 
 val romToolsOutputDirectory: DirectoryProperty =

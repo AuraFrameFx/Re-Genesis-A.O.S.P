@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm")
 
     // Additional tooling
-    alias(libs.plugins.kotlin.serialization)
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     alias(libs.plugins.dokka)
     alias(libs.plugins.spotless)
 }

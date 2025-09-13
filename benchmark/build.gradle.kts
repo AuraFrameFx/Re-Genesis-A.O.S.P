@@ -3,7 +3,6 @@
 
 plugins {
     id("com.android.library")
-    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
 }
 kotlin {
@@ -111,6 +110,9 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     kspAndroidTest(libs.hilt.compiler)
     implementation(kotlin("stdlib-jdk8"))
+
+    // Serialization
+    implementation(libs.kotlinx.serialization.json)
 }
 
 tasks.register("benchmarkAll") {
