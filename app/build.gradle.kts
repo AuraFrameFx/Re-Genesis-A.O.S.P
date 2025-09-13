@@ -12,6 +12,7 @@ buildscript {
 }
 
 plugins {
+    alias(libs.plugins.android.application)
     id("genesis.android.application")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
