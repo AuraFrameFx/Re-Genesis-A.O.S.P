@@ -8,9 +8,9 @@ import dev.aurakai.auraframefx.securecomm.keystore.SecureKeyStore
 import dev.aurakai.auraframefx.securecomm.protocol.SecureChannel
 import org.junit.Assert.*
 import org.junit.Rule
-import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 import org.junit.runner.RunWith
 import javax.inject.Inject
 
@@ -34,14 +34,14 @@ class NeuralSyncIntegrationTest {
     private lateinit var secureChannel2: SecureChannel
     private val testMessage = "NeuralSync integration test message".toByteArray()
 
-    @BeforeEach
+    @Before
     fun setUp() {
         hiltRule.inject()
         secureChannel1 = SecureChannel(cryptoManager)
         secureChannel2 = SecureChannel(cryptoManager)
     }
 
-    @AfterEach
+    @After
     fun tearDown() {
         // Clean up test data
         secureKeyStore.clearAllData()

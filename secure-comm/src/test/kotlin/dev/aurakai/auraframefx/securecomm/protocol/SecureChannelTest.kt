@@ -7,9 +7,9 @@ import dagger.hilt.android.testing.HiltAndroidTest
 import dev.aurakai.auraframefx.securecomm.crypto.CryptoManager
 import org.junit.Assert.*
 import org.junit.Rule
-import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 import org.junit.runner.RunWith
 import javax.inject.Inject
 
@@ -30,7 +30,7 @@ class SecureChannelTest {
     private lateinit var secureChannel2: SecureChannel
     private val testMessage = "NeuralSync secure channel test message".toByteArray()
 
-    @BeforeEach
+    @Before
     fun setUp() {
         hiltRule.inject()
         cryptoManager = CryptoManager(context)
@@ -38,7 +38,7 @@ class SecureChannelTest {
         secureChannel2 = SecureChannel(cryptoManager)
     }
 
-    @AfterEach
+    @After
     fun tearDown() {
         // Clean up any test keys
         try {

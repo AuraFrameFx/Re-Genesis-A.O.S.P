@@ -1,6 +1,12 @@
 package dev.aurakai.auraframefx.securecomm.crypto
 
+import android.content.BroadcastReceiver
+import android.content.ComponentName
 import android.content.Context
+import android.content.Intent
+import android.content.ServiceConnection
+import android.os.Bundle
+import android.os.Handler
 import kotlinx.coroutines.test.runTest
 import java.security.KeyPairGenerator
 import java.security.spec.ECGenParameterSpec
@@ -72,9 +78,7 @@ class CryptoManagerTest {
         override fun fileList() = throw UnsupportedOperationException()
         override fun getDir(name: String?, mode: Int) = throw UnsupportedOperationException()
         override fun openOrCreateDatabase(
-            name: String?,
-            mode: Int,
-            factory: android.database.sqlite.SQLiteDatabase.CursorFactory?
+            name: String?, mode: Int, factory: android.database.sqlite.SQLiteDatabase.CursorFactory?
         ) = throw UnsupportedOperationException()
 
         override fun openOrCreateDatabase(
@@ -101,23 +105,21 @@ class CryptoManagerTest {
             throw UnsupportedOperationException()
 
         override fun clearWallpaper() = throw UnsupportedOperationException()
-        override fun startActivity(intent: android.content.Intent?) =
+        override fun startActivity(intent: Intent?) = throw UnsupportedOperationException()
+
+        override fun startActivity(intent: Intent?, options: Bundle?) =
             throw UnsupportedOperationException()
 
-        override fun startActivity(intent: android.content.Intent?, options: android.os.Bundle?) =
-            throw UnsupportedOperationException()
-
-        override fun startActivities(intents: Array<out android.content.Intent>?) =
+        override fun startActivities(intents: Array<out Intent>?) =
             throw UnsupportedOperationException()
 
         override fun startActivities(
-            intents: Array<out android.content.Intent>?,
-            options: android.os.Bundle?
+            intents: Array<out Intent>?, options: Bundle?
         ) = throw UnsupportedOperationException()
 
         override fun startIntentSender(
             intent: android.content.IntentSender?,
-            fillInIntent: android.content.Intent?,
+            fillInIntent: Intent?,
             flagsMask: Int,
             flagsValues: Int,
             extraFlags: Int
@@ -125,151 +127,160 @@ class CryptoManagerTest {
 
         override fun startIntentSender(
             intent: android.content.IntentSender?,
-            fillInIntent: android.content.Intent?,
+            fillInIntent: Intent?,
             flagsMask: Int,
             flagsValues: Int,
             extraFlags: Int,
-            options: android.os.Bundle?
+            options: Bundle?
         ) = throw UnsupportedOperationException()
 
-        override fun sendBroadcast(intent: android.content.Intent?) =
-            throw UnsupportedOperationException()
+        override fun sendBroadcast(intent: Intent?) = throw UnsupportedOperationException()
 
-        override fun sendBroadcast(intent: android.content.Intent?, receiverPermission: String?) =
+        override fun sendBroadcast(intent: Intent?, receiverPermission: String?) =
             throw UnsupportedOperationException()
 
         override fun sendOrderedBroadcast(
-            intent: android.content.Intent?,
-            receiverPermission: String?
+            intent: Intent?, receiverPermission: String?
         ) = throw UnsupportedOperationException()
 
         override fun sendOrderedBroadcast(
-            intent: android.content.Intent?,
+            intent: Intent,
             receiverPermission: String?,
-            resultReceiver: android.content.BroadcastReceiver?,
-            scheduler: android.os.Handler?,
+            resultReceiver: BroadcastReceiver?,
+            scheduler: Handler?,
             initialCode: Int,
             initialData: String?,
-            initialExtras: android.os.Bundle?
+            initialExtras: Bundle?
+        ) {
+        }
+
+        override fun sendOrderedBroadcast(
+            intent: Intent?,
+            receiverPermission: String?,
+            resultReceiver: BroadcastReceiver?,
+            scheduler: Handler?,
+            initialCode: Int,
+            initialData: String?,
+            initialExtras: Bundle?
         ) = throw UnsupportedOperationException()
 
         override fun sendBroadcastAsUser(
-            intent: android.content.Intent?,
-            user: android.os.UserHandle?
+            intent: Intent?, user: android.os.UserHandle?
         ) = throw UnsupportedOperationException()
 
         override fun sendBroadcastAsUser(
-            intent: android.content.Intent?,
-            user: android.os.UserHandle?,
-            receiverPermission: String?
+            intent: Intent?, user: android.os.UserHandle?, receiverPermission: String?
         ) = throw UnsupportedOperationException()
 
         override fun sendOrderedBroadcastAsUser(
-            intent: android.content.Intent?,
+            intent: Intent?,
             user: android.os.UserHandle?,
             receiverPermission: String?,
-            resultReceiver: android.content.BroadcastReceiver?,
-            scheduler: android.os.Handler?,
+            resultReceiver: BroadcastReceiver?,
+            scheduler: Handler?,
             initialCode: Int,
             initialData: String?,
-            initialExtras: android.os.Bundle?
+            initialExtras: Bundle?
         ) = throw UnsupportedOperationException()
 
-        override fun sendStickyBroadcast(intent: android.content.Intent?) =
-            throw UnsupportedOperationException()
+        override fun sendStickyBroadcast(intent: Intent?) = throw UnsupportedOperationException()
 
         override fun sendStickyOrderedBroadcast(
-            intent: android.content.Intent?,
-            resultReceiver: android.content.BroadcastReceiver?,
-            scheduler: android.os.Handler?,
+            intent: Intent?,
+            resultReceiver: BroadcastReceiver?,
+            scheduler: Handler?,
             initialCode: Int,
             initialData: String?,
-            initialExtras: android.os.Bundle?
+            initialExtras: Bundle?
         ) = throw UnsupportedOperationException()
 
-        override fun removeStickyBroadcast(intent: android.content.Intent?) =
-            throw UnsupportedOperationException()
+        override fun removeStickyBroadcast(intent: Intent?) = throw UnsupportedOperationException()
 
         override fun sendStickyBroadcastAsUser(
-            intent: android.content.Intent?,
-            user: android.os.UserHandle?
+            intent: Intent?, user: android.os.UserHandle?
         ) = throw UnsupportedOperationException()
 
         override fun sendStickyOrderedBroadcastAsUser(
-            intent: android.content.Intent?,
+            intent: Intent?,
             user: android.os.UserHandle?,
-            resultReceiver: android.content.BroadcastReceiver?,
-            scheduler: android.os.Handler?,
+            resultReceiver: BroadcastReceiver?,
+            scheduler: Handler?,
             initialCode: Int,
             initialData: String?,
-            initialExtras: android.os.Bundle?
+            initialExtras: Bundle?
         ) = throw UnsupportedOperationException()
 
         override fun removeStickyBroadcastAsUser(
-            intent: android.content.Intent?,
-            user: android.os.UserHandle?
+            intent: Intent?, user: android.os.UserHandle?
         ) = throw UnsupportedOperationException()
 
         override fun registerReceiver(
-            receiver: android.content.BroadcastReceiver?,
-            filter: android.content.IntentFilter?
+            receiver: BroadcastReceiver?, filter: android.content.IntentFilter?
         ) = throw UnsupportedOperationException()
 
         override fun registerReceiver(
-            receiver: android.content.BroadcastReceiver?,
-            filter: android.content.IntentFilter?,
-            flags: Int
+            receiver: BroadcastReceiver?, filter: android.content.IntentFilter?, flags: Int
         ) = throw UnsupportedOperationException()
 
         override fun registerReceiver(
-            receiver: android.content.BroadcastReceiver?,
+            receiver: BroadcastReceiver?,
             filter: android.content.IntentFilter?,
             broadcastPermission: String?,
-            scheduler: android.os.Handler?
+            scheduler: Handler?
         ) = throw UnsupportedOperationException()
 
         override fun registerReceiver(
-            receiver: android.content.BroadcastReceiver?,
+            receiver: BroadcastReceiver?,
             filter: android.content.IntentFilter?,
             broadcastPermission: String?,
-            scheduler: android.os.Handler?,
+            scheduler: Handler?,
             flags: Int
         ) = throw UnsupportedOperationException()
 
-        override fun unregisterReceiver(receiver: android.content.BroadcastReceiver?) =
+        override fun unregisterReceiver(receiver: BroadcastReceiver?) =
             throw UnsupportedOperationException()
 
-        override fun startService(service: android.content.Intent?) =
-            throw UnsupportedOperationException()
+        override fun startService(service: Intent?) = throw UnsupportedOperationException()
 
-        override fun startForegroundService(service: android.content.Intent?) =
-            throw UnsupportedOperationException()
-
-        override fun stopService(name: android.content.Intent?) =
-            throw UnsupportedOperationException()
-
-        override fun bindService(
-            service: android.content.Intent?,
-            conn: android.content.ServiceConnection,
-            flags: Int
-        ) = throw UnsupportedOperationException()
-
-        override fun unbindService(conn: android.content.ServiceConnection) =
+        override fun startForegroundService(service: Intent?) =
             throw UnsupportedOperationException()
 
         override fun startInstrumentation(
-            className: android.content.ComponentName?,
-            profileFile: String?,
-            arguments: android.os.Bundle?
+            className: ComponentName, profileFile: String?, arguments: Bundle?
+        ): Boolean {
+            TODO("Not yet implemented")
+        }
+
+        override fun stopService(name: Intent?) = throw UnsupportedOperationException()
+
+        override fun bindService(
+            service: Intent?, conn: ServiceConnection, flags: Int
         ) = throw UnsupportedOperationException()
+
+        override fun unbindService(conn: ServiceConnection) = throw UnsupportedOperationException()
+
+        override fun startInstrumentation(
+            className: ComponentName,
+            profileFile: String?,
+            arguments: Bundle?
+        ): Boolean = throw UnsupportedOperationException()
 
         override fun getSystemService(name: String) = null
         override fun getSystemServiceName(serviceClass: Class<*>) = null
         override fun checkPermission(permission: String, pid: Int, uid: Int) =
             throw UnsupportedOperationException()
 
+        override fun checkSelfPermission(permission: String): Int {
+            return PackageManager.PERMISSION_GRANTED        }
+
         override fun checkCallingPermission(permission: String) =
             throw UnsupportedOperationException()
+
+        override fun bindService(
+            service: Intent, conn: ServiceConnection, flags: Int
+        ): Boolean {
+            TODO("Not yet implemented")
+        }
 
         override fun checkCallingOrSelfPermission(permission: String) =
             throw UnsupportedOperationException()
@@ -290,9 +301,7 @@ class CryptoManagerTest {
             throw UnsupportedOperationException()
 
         override fun revokeUriPermission(
-            toPackage: String?,
-            uri: android.net.Uri?,
-            modeFlags: Int
+            toPackage: String?, uri: android.net.Uri?, modeFlags: Int
         ) = throw UnsupportedOperationException()
 
         override fun checkUriPermission(uri: android.net.Uri?, pid: Int, uid: Int, modeFlags: Int) =
@@ -314,23 +323,15 @@ class CryptoManagerTest {
         ) = throw UnsupportedOperationException()
 
         override fun enforceUriPermission(
-            uri: android.net.Uri?,
-            pid: Int,
-            uid: Int,
-            modeFlags: Int,
-            message: String?
+            uri: android.net.Uri?, pid: Int, uid: Int, modeFlags: Int, message: String?
         ) = throw UnsupportedOperationException()
 
         override fun enforceCallingUriPermission(
-            uri: android.net.Uri?,
-            modeFlags: Int,
-            message: String?
+            uri: android.net.Uri?, modeFlags: Int, message: String?
         ) = throw UnsupportedOperationException()
 
         override fun enforceCallingOrSelfUriPermission(
-            uri: android.net.Uri?,
-            modeFlags: Int,
-            message: String?
+            uri: android.net.Uri?, modeFlags: Int, message: String?
         ) = throw UnsupportedOperationException()
 
         override fun enforceUriPermission(
@@ -403,7 +404,7 @@ class CryptoManagerTest {
 
         assertContentEquals((key1 as SecretKeySpec).encoded, (key2 as SecretKeySpec).encoded)
         assertEquals("AES", key1.algorithm)
-        assertEquals(32, (key1 as SecretKeySpec).encoded.size, "Key length must be 256-bit")
+        assertEquals(32, key1.encoded.size, "Key length must be 256-bit")
     }
 
     @Test
@@ -426,8 +427,7 @@ class CryptoManagerTest {
             (k12 as SecretKeySpec).encoded.contentToString()
         )
         assertNotEquals(
-            (k11 as SecretKeySpec).encoded.contentToString(),
-            (k21 as SecretKeySpec).encoded.contentToString()
+            k11.encoded.contentToString(), (k21 as SecretKeySpec).encoded.contentToString()
         )
     }
 
@@ -462,9 +462,7 @@ class CryptoManagerTest {
         val (ct2, iv2) = crypto.encrypt(data, key)
 
         assertNotEquals(
-            iv1.contentToString(),
-            iv2.contentToString(),
-            "IVs must be random and unique"
+            iv1.contentToString(), iv2.contentToString(), "IVs must be random and unique"
         )
         assertNotEquals(
             ct1.contentToString(),
