@@ -59,8 +59,9 @@ pluginManagement {
         }
     }
     plugins {
-        id("com.android.library") version "8.2.2"
-        id("org.jetbrains.kotlin.android") version "2.2.20"
+        id("com.android.library") version "8.13.0"
+        id("org.jetbrains.kotlin.android") version "2.2.20-RC"
+
         // Apply YukiHook plugin
         id("com.highcapable.yukihook") version "1.3.9"
         id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
