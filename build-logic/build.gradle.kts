@@ -4,7 +4,6 @@ plugins {
     `kotlin-dsl`
     id("org.jetbrains.compose") version "1.8.2"
     id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
-    id("com.android.library") version "9.0.0-alpha05"
 }
 
 group = "dev.aurakai.auraframefx.buildlogic"
