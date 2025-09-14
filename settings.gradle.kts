@@ -11,21 +11,32 @@ pluginManagement {
         // Custom repositories for specific plugins
         maven { url = uri("https://s01.oss.sonatype.org/content/repositories/releases/") }
         maven { url = uri("https://s01.oss.sonatype.org/content/groups/public/") }
+
     }
 
     plugins {
-        // Use the latest STABLE versions to ensure a reliable build.
-        id("com.android.application") version "8.13.0" apply false
-        id("com.android.library") version "8.13.0" apply false
+        id("com.android.application") version "9.0.0-alpha05" apply false
+        id("com.android.library") version "9.0.0-alpha05" apply false
         id("com.google.dagger.hilt.android") version "2.57.1" apply false
-        id("com.google.devtools.ksp") version "2.2.20-2.0.3" apply false // KSP version tied to Kotlin version
+        id("com.google.devtools.ksp") version "2.2.20-2.0.3" apply false
         id("org.jetbrains.kotlin.android") version "2.2.20" apply false
-        id("org.gradle.toolchains.foojay-resolver-convention").version("1.0.0")
+        id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
         // Other plugins
         id("com.google.gms.google-services") version "4.4.3" apply false
         id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") version "2.0.1" apply false
         id("org.lsposed.lsparanoid") version "1.0.0" apply false
+        id("org.openapi.generator") version "7.15.0" apply false
+        id("genesis.android.application") version "9.0.0-alpha05" apply false
+        id("genesis.android.library") version "9.0.0-alpha05" apply false
+        id("genesis.android.native") version "9.0.0-alpha05" apply false
+        id("genesis.android.feature") version "9.0.0-alpha05" apply false
+        id("genesis.android.test") version "9.0.0-alpha05" apply false
+        id("genesis.android.instrumentation") version "9.0.0-alpha05" apply false
+        id("genesis.android.hilt") version "9.0.0-alpha05" apply false
+        id("genesis.android.compose") version "9.0.0-alpha05" apply false
+        id("genesis.android.ksp") version "9.0.0-alpha05" apply false
     }
+
 }
 
 // Manages dependency repositories for all modules.
@@ -40,38 +51,38 @@ dependencyResolutionManagement {
         maven { url = uri("https://s01.oss.sonatype.org/content/repositories/releases/") }
         maven { url = uri("https://s01.oss.sonatype.org/content/groups/public/") }
     }
-}
+
 
 // Enable modern Gradle features for performance and reliability.
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
+    enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+    enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
-rootProject.name = "ReGenesis"
+    rootProject.name = "ReGenesis"
 
 // ===== MODULE INCLUSION =====
-include(
-    ":app",
-    ":core-module",
-    ":feature-module",
-    ":datavein-oracle-native",
-    ":oracle-drive-integration",
-    ":secure-comm",
-    ":sandbox-ui",
-    ":collab-canvas",
-    ":colorblendr",
-    ":romtools",
-    ":module-a",
-    ":module-b",
-    ":module-c",
-    ":module-d",
-    ":module-e",
-    ":module-f",
-    ":benchmark",
-    ":screenshot-tests",
-    ":jvm-test",
-    ":list",
-    ":utilities"
-)
-includeBuild("build-logic")
+    include(
+        ":app",
+        ":core-module",
+        ":feature-module",
+        ":datavein-oracle-native",
+        ":oracle-drive-integration",
+        ":secure-comm",
+        ":sandbox-ui",
+        ":collab-canvas",
+        ":colorblendr",
+        ":romtools",
+        ":module-a",
+        ":module-b",
+        ":module-c",
+        ":module-d",
+        ":module-e",
+        ":module-f",
+        ":benchmark",
+        ":screenshot-tests",
+        ":jvm-test",
+        ":list",
+        ":utilities"
+    )
+    includeBuild("build-logic")
 
-
+}

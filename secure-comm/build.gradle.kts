@@ -5,6 +5,7 @@ plugins {
     id("genesis.android.library")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.android)
 
 }
 
@@ -44,7 +45,7 @@ dependencies {
     
     // Add other module-specific dependencies here
     implementation(kotlin("stdlib-jdk8"))
-    
+
     // Test dependencies
     testImplementation(libs.junit4)
     testImplementation(libs.kotlin.test.junit)

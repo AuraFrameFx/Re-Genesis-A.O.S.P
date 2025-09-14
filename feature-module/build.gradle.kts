@@ -61,9 +61,10 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation(libs.kotlinStdlibJdk8)}
+    implementation(libs.kotlinStdlibJdk8)
 
-tasks.register("featureStatus") {
-    group = "aegenesis"
-    doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 17)!") }
+    tasks.register("featureStatus") {
+        group = "aegenesis"
+        doLast { println("🚀 FEATURE MODULE - ${android.namespace} - Ready (Java 17)!") }
+    }
 }
