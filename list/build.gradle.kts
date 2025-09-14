@@ -1,6 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
-
 plugins {
     kotlin("jvm")
     id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
@@ -27,7 +24,7 @@ dependencies {
 
     testImplementation(libs.junit4)
     testImplementation(libs.junit.jupiter.api)
-    testRuntimeOnly(libs.junit.jupiter.engine)
+    testRuntimeOnly(libs.junit.platform.launcher)
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation(libs.mockk)
 }
