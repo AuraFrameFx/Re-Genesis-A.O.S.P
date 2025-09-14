@@ -99,11 +99,6 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 targetCompatibility = JavaVersion.VERSION_24
             }
 
-            // Kotlin JVM toolchain
-            extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension> {
-                jvmToolchain(24)
-            }
-
             // Clean tasks for app module
             tasks.register("cleanKspCache", Delete::class.java) {
                 group = "build setup"

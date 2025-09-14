@@ -20,10 +20,6 @@ java {
     toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
 }
 
-kotlin {
-    jvmToolchain(jdkVersion)
-}
-
 dependencies {
     // Module dependency
     api(project(":list"))

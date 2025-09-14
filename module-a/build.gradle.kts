@@ -8,6 +8,10 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.module.a"
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
+    }
 }
 
 dependencies {
@@ -25,8 +29,4 @@ dependencies {
 tasks.register("moduleAStatus") {
     group = "aegenesis"
     doLast { println("📦 MODULE A - Ready (Java 24)") }
-}
-
-kotlin {
-    jvmToolchain(24)
 }

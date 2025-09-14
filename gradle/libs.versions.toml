@@ -1,7 +1,7 @@
 [versions]
 # ===== GRADLE & KOTLIN =====
-agp = "8.4.0-beta01"
-gradle = "9.0.0-alpha05"
+agp = "9.0.0-alpha02"
+gradle = "9.0.0-alpha02"
 junitJupiterParams = "5.13.4"
 gradleToolingApi = "9.0.0"
 kotlin = "2.2.20"
@@ -10,7 +10,7 @@ ksp = "2.2.20-2.0.3"
 desugar_jdk_libs = "2.1.5"
 # ===== HOOKING FRAMEWORKS =====
 multidex = "2.0.1"
-runtimeKtx = "X.Y.Z"
+runtimeKtx = "1.17.0"
 xposed = "82"
 api = "82"
 lsposed = "6.4"
@@ -263,6 +263,7 @@ junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.r
 junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version = "1.13.4" }
 kotlinStdlibJdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
 kotlinReflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 
 [plugins]
 # Android

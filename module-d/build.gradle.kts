@@ -7,6 +7,10 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.module.d"
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
+    }
 }
 
 dependencies {

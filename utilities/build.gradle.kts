@@ -2,7 +2,6 @@ plugins {
     // JVM library setup
     id("java-library")
     kotlin("jvm")
-    id("org.jetbrains.kotlin.plugin.compose")
 
     // Additional tooling
     id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
@@ -19,10 +18,6 @@ val jdkVersion = 24
 
 java {
     toolchain { languageVersion.set(JavaLanguageVersion.of(jdkVersion)) }
-}
-
-kotlin {
-    jvmToolchain(jdkVersion)
 }
 
 dependencies {

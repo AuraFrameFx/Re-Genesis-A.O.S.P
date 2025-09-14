@@ -2,7 +2,7 @@
 // Primary feature module using convention plugins
 
 plugins {
-    id("com.android.library")
+    id("com.android.library") version libs.versions.agp
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
@@ -12,22 +12,16 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.featuremodule"
-    compileSdk = 36
+    // compileSdk = 36
+    compileSdkPreview = "CANARY"
 
     defaultConfig {
         minSdk = 34
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlin {
-        jvmToolchain(24)
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
-        }
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
     }
 
     buildFeatures {

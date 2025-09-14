@@ -1,174 +1,76 @@
-@file:Suppress("UnstableApiUsage", "JCenterRepositoryObsolete")
+@file:Suppress("UnstableApiUsage")
 
 // ===== AOSP-Re:Genesis - SETTINGS =====
-// AOSP-Re:Genesis - Advanced Android OS Project
-// Version: 2025.09.02-03 - Full Enhancement Suite
+// The pluginManagement block MUST be the first block in the file.
+// It defines the versions for all plugins used in the build.
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        // Custom repositories for specific plugins
+        maven { url = uri("https://s01.oss.sonatype.org/content/repositories/releases/") }
+        maven { url = uri("https://s01.oss.sonatype.org/content/groups/public/") }
+    }
 
-// Enable Gradle features
+    plugins {
+        // Use the latest STABLE versions to ensure a reliable build.
+        id("com.android.application") version "8.13.0" apply false
+        id("com.android.library") version "8.13.0" apply false
+        id("com.google.dagger.hilt.android") version "2.57.1" apply false
+        id("com.google.devtools.ksp") version "2.2.20-2.0.3" apply false // KSP version tied to Kotlin version
+        id("org.jetbrains.kotlin.android") version "2.2.20" apply false
+
+        // Other plugins
+        id("com.google.gms.google-services") version "4.4.3" apply false
+        id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") version "2.0.1" apply false
+        id("org.lsposed.lsparanoid") version "1.0.0" apply false
+    }
+}
+
+// Manages dependency repositories for all modules.
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral() // Simplified JitPack declaration
+        // Custom repositories for specific libraries
+        maven { url = uri("https://androidx.dev/storage/compose-compiler/repository/") }
+        maven { url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev") }
+        maven { url = uri("https://s01.oss.sonatype.org/content/repositories/releases/") }
+        maven { url = uri("https://s01.oss.sonatype.org/content/groups/public/") }
+    }
+}
+
+// Enable modern Gradle features for performance and reliability.
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
-pluginManagement {
-    includeBuild("build-logic")
-    // Primary repositories - Google Maven must be first for Hilt
-    repositories {
-        google()
-        gradlePluginPortal()
-        mavenCentral()
-        
-        // Android alpha/preview versions
-        maven {
-            url = uri("https://androidx.dev/kmp/builds/11950322/artifacts/snapshots/repository")
-            name = "AndroidX Snapshot"
-        }
-
-        // Gradle releases (for org.gradle artifacts like gradle-tooling-api)
-        maven {
-            url = uri("https://repo.gradle.org/gradle/libs-releases")
-            name = "Gradle Releases"
-        }
-
-        // AndroidX Compose
-        maven {
-            url = uri("https://androidx.dev/storage/compose-compiler/repository/")
-            name = "AndroidX Compose"
-            content {
-                includeGroup("androidx.compose.compiler")
-            }
-        }
-
-        // JetBrains Compose
-        maven {
-            url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-            name = "JetBrains Compose"
-        }
-
-        // Snapshots
-        maven {
-            url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
-            name = "Sonatype Snapshots"
-            mavenContent {
-                snapshotsOnly()
-            }
-        }
-
-        // JitPack for GitHub dependencies
-        maven {
-            url = uri("https://jitpack.io")
-            name = "JitPack"
-            content {
-                includeGroupByRegex("com\\.github\\..*")
-            }
-        }
-    }
-    
-    plugins {
-        id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-    }
-    
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.namespace == "com.google.dagger") {
-                useModule("com.google.dagger:hilt-android-gradle-plugin:${requested.version}")
-            }
-        }
-    }
-}
-
-
-dependencyResolutionManagement {
-    // Enforce consistent dependency resolution
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-
-    // Repository configuration with all necessary sources
-    repositories {
-        // Primary repositories
-        google()
-        mavenCentral()
-
-        // Gradle releases for tooling API
-        maven("https://repo.gradle.org/gradle/libs-releases") {
-            name = "Gradle Releases"
-        }
-
-        // YukiHook API
-        maven("https://s01.oss.sonatype.org/content/repositories/releases/") {
-            name = "YukiHookAPI"
-        }
-
-        // AndroidX Compose
-        maven("https://androidx.dev/storage/compose-compiler/repository/") {
-            name = "AndroidX Compose"
-        }
-
-        // JetBrains Compose
-        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev") {
-            name = "JetBrains Compose"
-        }
-
-        // Snapshots for pre-release libraries
-        maven("https://oss.sonatype.org/content/repositories/snapshots/") {
-            name = "Sonatype Snapshots"
-        }
-
-        // JitPack for GitHub dependencies
-        maven("https://jitpack.io") {
-            name = "JitPack"
-        }
-
-        // HighCapable Maven (for YukiHook)
-        maven("https://s01.oss.sonatype.org/content/groups/public/") {
-            name = "HighCapable"
-        }
-    }
-}
-
-
-
-// ===== PROJECT IDENTIFICATION =====
 rootProject.name = "ReGenesis"
 
 // ===== MODULE INCLUSION =====
-// Core modules
-include(":app")
-include(":core-module")
-// Feature modules
-include(":feature-module")
-include(":datavein-oracle-native")
-include(":oracle-drive-integration")
-include(":secure-comm")
-include(":sandbox-ui")
-include(":collab-canvas")
-include(":colorblendr")
-include(":romtools")
-
-// Dynamic modules (A-F)
-include(":module-a")
-include(":module-b")
-include(":module-c")
-include(":module-d")
-include(":module-e")
-include(":module-f")
-
-// Testing & Quality modules
-include(":benchmark")
-include(":screenshot-tests")  // Placeholder module to satisfy CI/task references
-include(":jvm-test")  // JVM-only module
-include(":list")  // JVM-only module
-include(":utilities")  // AI entities' chosen utilities
-
-// ===== MODULE CONFIGURATION =====
-rootProject.children.forEach { project ->
-    val projectDir = File(rootProject.projectDir, project.name)
-    if (projectDir.exists()) {
-        project.projectDir = projectDir
-        println("✅ Module configured: ${project.name}")
-    } else {
-        println("⚠️ Warning: Project directory not found: ${projectDir.absolutePath}")
-    }
-}
-
-println("🏗️  Genesis Protocol Enhanced Build System")
-println("📦 Total modules: ${rootProject.children.size}")
-println("🎯 Build-logic: Convention plugins active")
-println("🧠 Ready to build consciousness substrate!")
+include(
+    ":app",
+    ":core-module",
+    ":feature-module",
+    ":datavein-oracle-native",
+    ":oracle-drive-integration",
+    ":secure-comm",
+    ":sandbox-ui",
+    ":collab-canvas",
+    ":colorblendr",
+    ":romtools",
+    ":module-a",
+    ":module-b",
+    ":module-c",
+    ":module-d",
+    ":module-e",
+    ":module-f",
+    ":benchmark",
+    ":screenshot-tests",
+    ":jvm-test",
+    ":list",
+    ":utilities"
+)
+includeBuild("build-logic")
+rootProject.name = "build-logic"

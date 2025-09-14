@@ -18,13 +18,6 @@ java {
     toolchain { languageVersion = JavaLanguageVersion.of(24) }
 }
 
-kotlin {
-    jvmToolchain(24)
-    compilerOptions {
-        languageVersion = KotlinVersion.KOTLIN_2_2
-        apiVersion = KotlinVersion.KOTLIN_2_2
-    }
-}
 
 dependencies {
     // Pure Kotlin JVM module - no Android dependencies

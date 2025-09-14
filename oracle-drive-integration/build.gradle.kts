@@ -11,6 +11,10 @@ android {
     defaultConfig {
         minSdk = 34
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
+    }
 }
 
 dependencies {
@@ -28,8 +32,4 @@ dependencies {
     implementation(libs.bundles.coroutines)
     // Add other module-specific dependencies here
     implementation(kotlin("stdlib-jdk8"))
-}
-
-kotlin {
-    jvmToolchain(24)
 }

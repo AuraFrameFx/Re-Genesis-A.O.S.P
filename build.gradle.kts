@@ -1,12 +1,9 @@
-plugins {
-    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20" apply false // external plugin
-    // Removed Android convention plugins from root project
-    // id("genesis.android.library")
-    // id("genesis.android.compose")
-    // id("genesis.android.native")
-    // Use AGP plugin for root project if needed
-    // Use only stable kotlin("jvm") version
+import org.gradle.api.JavaVersion
+// build-logic/build.gradle.kts
 
+plugins {
+    // No version is needed here. Gradle applies the correct version automatically.
+    `kotlin-dsl`
 }
 
 // Find version catalog

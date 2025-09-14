@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.library")
+    id("com.android.library") version libs.versions.agp
     id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
@@ -7,21 +7,15 @@ plugins {
 
 android {
     namespace = "dev.aurakai.auraframefx.romtools"
-    compileSdk = 36
-    
+    // compileSdk = 36
+    compileSdkPreview = "CANARY"
+
     defaultConfig {
         minSdk = 34
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
-    }
-}
-
-kotlin {
-    jvmToolchain(24)
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+        sourceCompatibility = JavaVersion.VERSION_24
+        targetCompatibility = JavaVersion.VERSION_24
     }
 }
 

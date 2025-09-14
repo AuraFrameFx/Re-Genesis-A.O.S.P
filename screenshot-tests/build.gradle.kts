@@ -9,5 +9,6 @@ plugins {
 
 }
 
-
-
+android {
+    namespace = "dev.aurakai.screenshottests"
+}

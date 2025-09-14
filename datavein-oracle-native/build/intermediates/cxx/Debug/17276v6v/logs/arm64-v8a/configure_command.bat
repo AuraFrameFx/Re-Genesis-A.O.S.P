@@ -1,6 +1,6 @@
 @echo off
 "C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\cmake\\3.31.6\\bin\\cmake.exe" ^
-  "-HC:\\Re-Genesis-A.O.S.P\\datavein-oracle-native\\src\\main\\cpp" ^
+  "-HC:\\ReGenesis\\datavein-oracle-native\\src\\main\\cpp" ^
   "-DCMAKE_SYSTEM_NAME=Android" ^
   "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON" ^
   "-DCMAKE_SYSTEM_VERSION=34" ^
@@ -12,9 +12,9 @@
   "-DCMAKE_TOOLCHAIN_FILE=C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\ndk\\28.2.13676358\\build\\cmake\\android.toolchain.cmake" ^
   "-DCMAKE_MAKE_PROGRAM=C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\cmake\\3.31.6\\bin\\ninja.exe" ^
   "-DCMAKE_CXX_FLAGS=-std=c++23 -fPIC -O0 -g" ^
-  "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\\Re-Genesis-A.O.S.P\\datavein-oracle-native\\build\\intermediates\\cxx\\Debug\\17276v6v\\obj\\arm64-v8a" ^
-  "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=C:\\Re-Genesis-A.O.S.P\\datavein-oracle-native\\build\\intermediates\\cxx\\Debug\\17276v6v\\obj\\arm64-v8a" ^
-  "-BC:\\Re-Genesis-A.O.S.P\\datavein-oracle-native\\.cxx\\Debug\\17276v6v\\arm64-v8a" ^
+  "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\\ReGenesis\\datavein-oracle-native\\build\\intermediates\\cxx\\Debug\\17276v6v\\obj\\arm64-v8a" ^
+  "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=C:\\ReGenesis\\datavein-oracle-native\\build\\intermediates\\cxx\\Debug\\17276v6v\\obj\\arm64-v8a" ^
+  "-BC:\\ReGenesis\\datavein-oracle-native\\.cxx\\Debug\\17276v6v\\arm64-v8a" ^
   -GNinja ^
   "-DANDROID_STL=c++_shared" ^
   "-DCMAKE_BUILD_TYPE=Debug" ^
