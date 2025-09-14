@@ -19,7 +19,7 @@ pluginManagement {
         id("com.android.library") version "8.13.0" apply false
         id("com.google.dagger.hilt.android") version "2.57.1" apply false
         id("com.google.devtools.ksp") version "2.2.20-2.0.3" apply false // KSP version tied to Kotlin version
-        id("org.jetbrains.kotlin.android") version "2.2.20" apply false
+        id("org.jetbrains.kotlin.android") version "2.2.0" apply false
 
         // Other plugins
         id("com.google.gms.google-services") version "4.4.3" apply false

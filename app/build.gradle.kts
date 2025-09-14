@@ -12,7 +12,6 @@ buildscript {
 }
 
 plugins {
-    alias(libs.plugins.android.application)
     id("genesis.android.application")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
@@ -20,7 +19,7 @@ plugins {
 }
 
 android {
-    namespace = "dev.aurakai.auiklp"
+    namespace = "dev.aurakai.auraframefx"
     // compileSdk = 36
     compileSdkPreview = "CANARY"
     defaultConfig {
@@ -158,4 +157,7 @@ android {
         implementation(libs.kotlinStdlibJdk8)
         implementation(libs.kotlinReflect)
     }
+}
+dependencies {
+    implementation(libs.androidx.core.ktx)
 }
