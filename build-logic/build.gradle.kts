@@ -2,8 +2,6 @@
 
 plugins {
     `kotlin-dsl`
-    id("org.jetbrains.compose") version "1.8.2"
-    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
 }
 
 group = "dev.aurakai.auraframefx.buildlogic"
@@ -27,7 +25,6 @@ dependencies {
     implementation("org.junit.jupiter:junit-jupiter-engine:5.13.4")
     implementation("org.junit.jupiter:junit-jupiter-api:5.13.4")
     implementation("com.android.tools.build:gradle:9.0.0-alpha02")
-    implementation("org.jetbrains.compose.runtime:runtime:1.8.2")
     // Test dependencies
 
 }

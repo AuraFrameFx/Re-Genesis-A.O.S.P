@@ -1,0 +1,10 @@
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      time: "06:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: "org.jetbrains.compose:org.jetbrains.compose.gradle.plugin"
