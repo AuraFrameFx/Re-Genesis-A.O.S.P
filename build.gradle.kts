@@ -4,7 +4,7 @@ import org.gradle.api.JavaVersion
 plugins {
     // No version is needed here. Gradle applies the correct version automatically.
     `kotlin-dsl`
-    id("io.gitlab.arturbosch.detekt") version "1.23.1"
+    id("io.gitlab.arturbosch.detekt") version "1.23.8"
 }
 
 // Find version catalog
