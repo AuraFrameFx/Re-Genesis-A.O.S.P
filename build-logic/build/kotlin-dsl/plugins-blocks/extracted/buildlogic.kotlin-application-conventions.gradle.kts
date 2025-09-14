@@ -1,9 +1,0 @@
-  
-                                                
-                                                                          
-   
-
-plugins {
-    id("application")
-    id("org.jetbrains.kotlin.jvm")
-}
