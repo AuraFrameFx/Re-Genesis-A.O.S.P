@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6deacb06-d99e-4ac8-9c53-308fcd2b5821" name="Changes" comment="chore: update build scripts, add utility and config files, and migrate project paths for improved structure" />
+    <list default="true" id="6deacb06-d99e-4ac8-9c53-308fcd2b5821" name="Changes" comment="build: add C++ build outputs for datavein-oracle-native and secure-comm modules&#10;&#10;- Add CMake build configuration and log files for arm64-v8a architecture in the datavein-oracle-native module.&#10;- Add CMake build configuration and log files for x86 architecture in the secure-comm module.&#10;- Include build model JSON, configure command batch script, stdout/stderr logs, timing information, and CMake API reply files.">
+      <change afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.cmake/api/v1/reply/index-2025-09-14T22-23-48-0576.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/kotlin/BuildScriptsValidationV2Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/kotlin/BuildScriptsValidationV2Test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/detekt/detekt.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/detekt/detekt.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.cmake/api/v1/reply/index-2025-09-14T19-54-31-0320.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.cmake/api/v1/reply/index-2025-09-14T19-54-31-0320.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/CMakeFiles/3.31.6/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/CMakeFiles/3.31.6/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/arm64-v8a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/1a2b5424/x86/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/1a2b5424/x86/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/1a2b5424/x86/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/1a2b5424/x86/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/RelWithDebInfo/304n211z/x86/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/RelWithDebInfo/304n211z/x86/.ninja_log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -310,7 +331,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757887939901</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="chore: update build scripts, add utility and config files, and migrate project paths for improved structure">
+      <option name="closed" value="true" />
+      <created>1757887982977</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1757887982977</updated>
+    </task>
+    <task id="LOCAL-00005" summary="chore: update build scripts, add utility and config files, and migrate project paths for improved structure">
+      <option name="closed" value="true" />
+      <created>1757888014044</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1757888014044</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -319,7 +356,8 @@
     <MESSAGE value="Update Kotlin standard library and Compose plugin versions&#10;&#10;- Updated kotlin(&quot;stdlib-jdk8&quot;) to specific versions in `collab-canvas`, `secure-comm`, `datavein-oracle-native`, `sandbox-ui`, `feature-module`, `romtools`, and `module-a` build scripts.&#10;- Replaced `alias(libs.plugins.kotlin.compose)` with `id(&quot;org.jetbrains.kotlin.plugin.compose&quot;)` in `secure-comm`, `screenshot-tests`, `sandbox-ui`, and `feature-module` build scripts.&#10;- Removed `alias(libs.plugins.compose.compiler)` from `screenshot-tests` and `feature-module` build scripts.&#10;- Removed `alias(libs.plugins.kotlin.compose) apply false` from the root `build.gradle.kts`.&#10;- Updated `com.squareup.moshi:moshi` from `1.15.0` to `1.15.2` in `app/build.gradle.kts`.&#10;- Removed `apply(plugin = &quot;org.jetbrains.compose&quot;)` from `sandbox-ui/build.gradle.kts`.&#10;- Deleted various .cxx build files." />
     <MESSAGE value="refactor: update project paths, dependency declarations, and plugin usage for improved consistency and portability" />
     <MESSAGE value="chore: update build scripts, add utility and config files, and migrate project paths for improved structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: update build scripts, add utility and config files, and migrate project paths for improved structure" />
+    <MESSAGE value="build: add C++ build outputs for datavein-oracle-native and secure-comm modules&#10;&#10;- Add CMake build configuration and log files for arm64-v8a architecture in the datavein-oracle-native module.&#10;- Add CMake build configuration and log files for x86 architecture in the secure-comm module.&#10;- Include build model JSON, configure command batch script, stdout/stderr logs, timing information, and CMake API reply files." />
+    <option name="LAST_COMMIT_MESSAGE" value="build: add C++ build outputs for datavein-oracle-native and secure-comm modules&#10;&#10;- Add CMake build configuration and log files for arm64-v8a architecture in the datavein-oracle-native module.&#10;- Add CMake build configuration and log files for x86 architecture in the secure-comm module.&#10;- Include build model JSON, configure command batch script, stdout/stderr logs, timing information, and CMake API reply files." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
