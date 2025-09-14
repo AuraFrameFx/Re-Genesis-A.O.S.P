@@ -1,0 +1,46 @@
+version: 2
+updates:
+  # Kotlin/Gradle dependencies
+  - package-ecosystem: "gradle"
+    directory: "/" # Change if your build.gradle is in a subdirectory
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "deps"
+    # Add ignore blocks here if needed
+
+  # Python dependencies
+  - package-ecosystem: "pip"
+    directory: "/" # Change if requirements.txt is in a subdirectory
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+
+  # GitHub Actions workflows
+  - package-ecosystem: "github-actions"
+    directory: "/" # Always root for workflows
+    schedule:
+      interval: "daily"
+
+  # Node.js (npm/yarn) for HTML/JS frontend if used
+  - package-ecosystem: "npm"
+    directory: "/" # Change if package.json is in a subdirectory
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+
+# Note: C++/CMake and Batchfile do not have native package managers for Dependabot updates.
+# For C++ libraries managed with vcpkg, conan, or other managers, add them here if used.
+
+# Recommended best practices:
+# - Keep dependency files (build.gradle, requirements.txt, package.json) up to date.
+# - Enable repo notifications to get alerts on PRs/issues.
+# - Review and merge Dependabot PRs regularly.
+# - Use ignore blocks to skip unnecessary or problematic dependencies.
+
+# Automerge (optional, uncomment to enable for patch updates)
+# automerge:
+#   - match:
+#       dependency_type: "direct"
+#       update_type: "version-update:semver-patch"

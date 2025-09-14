@@ -2,7 +2,7 @@
 
 plugins {
     `kotlin-dsl`
-    id("org.jetbrains.compose") version "1.10.0-alpha01"
+
     id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
 }
 
@@ -34,6 +34,7 @@ dependencies {
     // Compose Runtime for Compose Compiler compatibility
     implementation(platform("androidx.compose:compose-bom:2025.09.00"))
     implementation("androidx.compose.runtime:runtime")
+
     // Test dependencies
 
 }
