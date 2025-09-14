@@ -2,7 +2,7 @@
 
 plugins {
     `kotlin-dsl`
-    id("org.jetbrains.compose") version "1.8.2"
+    id("org.jetbrains.compose") version "1.10.0+dev2947"
     id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
 }
 

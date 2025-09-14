@@ -272,7 +272,7 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 # Kotlin
 kotlin-android = { id = "org.jetbrains.kotlin.android", version = "2.2.20" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-kotlin-compose = { id = "org.jetbrains.compose", version = "1.8.2" }
+kotlin-compose = { id = "org.jetbrains.compose", version = "1.10.0+dev2947" }
 # Other plugins
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt-version" }
