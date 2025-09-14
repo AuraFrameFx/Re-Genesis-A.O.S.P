@@ -13,7 +13,7 @@ buildscript {
 
 plugins {
     id("genesis.android.application")
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
     id("org.openapi.generator") version "7.15.0"
 }
