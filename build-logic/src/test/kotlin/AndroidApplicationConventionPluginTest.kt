@@ -104,3 +104,209 @@ class AndroidApplicationConventionPluginTest {
         assertTrue(project.tasks.findByName("dummy") != null)
     }
 }
+// ===== Functional tests (Gradle TestKit) for AndroidApplicationConventionPlugin =====
+@org.junit.jupiter.api.Tag("functional")
+class AndroidApplicationConventionPluginFunctionalTest {
+
+    @org.junit.jupiter.api.io.TempDir
+    lateinit var tmp: java.nio.file.Path
+
+    private lateinit var projectDir: java.io.File
+
+    @org.junit.jupiter.api.BeforeEach
+    fun setUp() {
+        projectDir = tmp.toFile()
+        writeSettings()
+        writeBuildScriptWithDiagnostics()
+        writeMinimalAndroidSources()
+    }
+
+    @org.junit.jupiter.api.Test
+    fun appliesPlugin_and_configures_android_extension_as_expected() {
+        val out = runGradle("printAndroidConfig").output
+
+        // SDKs and runner
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.compileSdk=36"), "compileSdk should be 36")
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.defaultConfig.minSdk=34"), "minSdk should be 34")
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.defaultConfig.targetSdk=36"), "targetSdk should be 36")
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.defaultConfig.testInstrumentationRunner=androidx.test.runner.AndroidJUnitRunner"))
+
+        // Vector drawables
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.defaultConfig.vectorDrawables.useSupportLibrary=true"))
+
+        // Build features
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.buildFeatures.compose=true"))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.buildFeatures.buildConfig=true"))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.buildFeatures.viewBinding=false"))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.buildFeatures.dataBinding=false"))
+
+        // Compile options
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.compileOptions.coreLibraryDesugaringEnabled=true"))
+
+        // Packaging - resources excludes (spot checks)
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.packaging.resources.excludes="))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("META-INF/LICENSE"), "Expected META-INF/LICENSE excluded")
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("META-INF/NOTICE"), "Expected META-INF/NOTICE excluded")
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("META-INF/*.kotlin_module"), "Expected Kotlin module excludes")
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("**/*.txt"), "Expected wildcard txt excludes")
+
+        // Packaging - JNI libs
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.packaging.jniLibs.useLegacyPackaging=false"))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.packaging.jniLibs.pickFirsts="))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("**/libc++_shared.so"))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("**/libjsc.so"))
+
+        // Lint
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.lint.warningsAsErrors=false"))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.lint.abortOnError=false"))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.lint.disable="))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("InvalidPackage"))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("OldTargetApi"))
+
+        // Build types - release
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.buildTypes.release.minifyEnabled=true"))
+        org.junit.jupiter.api.Assertions.assertTrue(out.contains("android.buildTypes.release.shrinkResources=true"))
+    }
+
+    @org.junit.jupiter.api.Test
+    fun preBuild_depends_on_cleanKspCache() {
+        val out = runGradle("printPreBuildDeps").output
+        org.junit.jupiter.api.Assertions.assertTrue(
+            out.contains("preBuild.deps="),
+            "Expected to find printed preBuild dependencies. Output:\n$out"
+        )
+        org.junit.jupiter.api.Assertions.assertTrue(
+            out.contains("cleanKspCache"),
+            "preBuild should depend on cleanKspCache. Output:\n$out"
+        )
+    }
+
+    @org.junit.jupiter.api.Test
+    fun cleanKspCache_deletes_expected_directories() {
+        // Arrange: create directories that the task should delete
+        val buildDir = java.io.File(projectDir, "build")
+        val targets = listOf(
+            "generated/ksp",
+            "generated/source/ksp",
+            "tmp/kapt3",
+            "tmp/kotlin-classes",
+            "kotlin"
+        )
+        targets.forEach { rel ->
+            val dir = java.io.File(buildDir, rel)
+            dir.mkdirs()
+            java.io.File(dir, ".keep").writeText("x")
+            org.junit.jupiter.api.Assertions.assertTrue(dir.exists(), "Setup failed: ${dir.path} should exist")
+        }
+
+        // Act
+        runGradle("cleanKspCache")
+
+        // Assert
+        targets.forEach { rel ->
+            val dir = java.io.File(buildDir, rel)
+            org.junit.jupiter.api.Assertions.assertFalse(dir.exists(), "Expected ${dir.path} to be deleted by cleanKspCache")
+        }
+    }
+
+    // ---- helpers ----
+
+    private fun writeSettings() {
+        java.io.File(projectDir, "settings.gradle.kts").writeText(
+            """
+            pluginManagement {
+                repositories {
+                    google()
+                    mavenCentral()
+                    gradlePluginPortal()
+                }
+                plugins {
+                    id("com.android.application") version "9.0.0-alpha02"
+                    id("org.jetbrains.kotlin.android") version "2.2.20"
+                }
+            }
+            dependencyResolutionManagement {
+                repositories {
+                    google()
+                    mavenCentral()
+                }
+            }
+            rootProject.name = "convention-test-app"
+            """.trimIndent()
+        )
+    }
+
+    private fun writeBuildScriptWithDiagnostics() {
+        java.io.File(projectDir, "build.gradle.kts").writeText(
+            """
+            plugins {
+                id("genesis.android.application")
+            }
+
+            // Diagnostics: print key Android extension values for assertions
+            tasks.register("printAndroidConfig") {
+                doLast {
+                    val android = extensions.getByType(com.android.build.api.dsl.ApplicationExtension::class.java)
+
+                    println("android.compileSdk=" + android.compileSdk)
+
+                    val def = android.defaultConfig
+                    println("android.defaultConfig.minSdk=" + def.minSdk)
+                    println("android.defaultConfig.targetSdk=" + def.targetSdk)
+                    println("android.defaultConfig.testInstrumentationRunner=" + def.testInstrumentationRunner)
+                    println("android.defaultConfig.vectorDrawables.useSupportLibrary=" + (def.vectorDrawables?.useSupportLibrary ?: false))
+
+                    val features = android.buildFeatures
+                    println("android.buildFeatures.compose=" + (features.compose ?: false))
+                    println("android.buildFeatures.buildConfig=" + (features.buildConfig ?: false))
+                    println("android.buildFeatures.viewBinding=" + (features.viewBinding ?: false))
+                    println("android.buildFeatures.dataBinding=" + (features.dataBinding ?: false))
+
+                    println("android.compileOptions.coreLibraryDesugaringEnabled=" + android.compileOptions.isCoreLibraryDesugaringEnabled)
+
+                    val packaging = android.packaging
+                    println("android.packaging.resources.excludes=" + packaging.resources.excludes.joinToString(","))
+                    println("android.packaging.jniLibs.useLegacyPackaging=" + (packaging.jniLibs.useLegacyPackaging ?: true))
+                    println("android.packaging.jniLibs.pickFirsts=" + packaging.jniLibs.pickFirsts.joinToString(","))
+
+                    val lint = android.lint
+                    println("android.lint.warningsAsErrors=" + lint.warningsAsErrors)
+                    println("android.lint.abortOnError=" + lint.abortOnError)
+                    println("android.lint.disable=" + lint.disable.joinToString(","))
+
+                    val release = android.buildTypes.getByName("release")
+                    println("android.buildTypes.release.minifyEnabled=" + release.isMinifyEnabled)
+                    println("android.buildTypes.release.shrinkResources=" + (release.isShrinkResources ?: false))
+                }
+            }
+
+            // Diagnostics: print dependencies of preBuild so we can assert cleanKspCache wiring
+            tasks.register("printPreBuildDeps") {
+                doLast {
+                    val pre = tasks.findByName("preBuild")
+                    if (pre == null) {
+                        println("preBuild:ABSENT")
+                    } else {
+                        val deps = pre.taskDependencies.getDependencies(pre).map { it.name }.sorted()
+                        println("preBuild.deps=" + deps.joinToString(","))
+                    }
+                }
+            }
+            """.trimIndent()
+        )
+    }
+
+    private fun writeMinimalAndroidSources() {
+        val manifest = java.io.File(projectDir, "src/main/AndroidManifest.xml")
+        manifest.parentFile.mkdirs()
+        manifest.writeText("""<manifest package="com.example.app" />""")
+    }
+
+    private fun runGradle(vararg args: String): org.gradle.testkit.runner.BuildResult {
+        return org.gradle.testkit.runner.GradleRunner.create()
+            .withProjectDir(projectDir)
+            .withArguments(*args, "--stacktrace", "--info")
+            .withPluginClasspath() // picks up the convention plugin under test
+            .build()
+    }
+}
