@@ -2,13 +2,22 @@
 // Primary feature module using convention plugins
 
 plugins {
-    id("com.android.library") version libs.versions.agp
+    id("com.android.library")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath(libs.gradle)
+    }
+}
 
 android {
     namespace = "dev.aurakai.auraframefx.featuremodule"
@@ -61,7 +70,7 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation(libs.kotlinStdlibJdk8)}
+    implementation(kotlin("stdlib-jdk8"))}
 
 tasks.register("featureStatus") {
     group = "aegenesis"

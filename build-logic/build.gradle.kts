@@ -2,8 +2,6 @@
 
 plugins {
     `kotlin-dsl`
-    id("org.jetbrains.compose") version "1.10.0+dev2947"
-    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
 }
 
 group = "dev.aurakai.auraframefx.buildlogic"
@@ -13,23 +11,6 @@ repositories {
     google()
     mavenCentral()
     gradlePluginPortal()
-    maven {
-        url = uri("https://repo.gradle.org/gradle/libs-releases")
-        name = "Gradle Releases"
-    }
-}
-
-// Dependencies required for the convention plugins themselves.
-dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20")
-    implementation("com.google.dagger:hilt-android-gradle-plugin:2.57.1")
-    implementation("org.junit.jupiter:junit-jupiter-params:5.13.4")
-    implementation("org.junit.jupiter:junit-jupiter-engine:5.13.4")
-    implementation("org.junit.jupiter:junit-jupiter-api:5.13.4")
-    implementation("com.android.tools.build:gradle:9.0.0-alpha02")
-    implementation("org.jetbrains.compose.runtime:runtime:1.10.0+dev2947")
-    // Test dependencies
-
 }
 
 // Configure test execution (temporarily disabled for bleeding-edge compatibility)
@@ -43,13 +24,9 @@ tasks.compileTestKotlin {
     enabled = false
 }
 
-tasks.withType<ProcessResources> {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
-
 gradlePlugin {
     plugins {
-        register("genesisAndroidApplication") {
+        register("androidApplication") {
             id = "genesis.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
@@ -71,4 +48,13 @@ gradlePlugin {
             implementationClass = "AndroidNativeConventionPlugin"
         }
     }
+}
+
+dependencies {
+    implementation("com.android.tools.build:gradle:9.0.0-alpha01")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.20")
+}
+
+tasks.withType<ProcessResources> {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

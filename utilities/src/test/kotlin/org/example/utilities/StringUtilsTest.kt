@@ -8,6 +8,7 @@
 
 package org.example.utilities
 
+import dev.aurakai.auraframefx.utilities.StringUtils
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.example.list.LinkedList

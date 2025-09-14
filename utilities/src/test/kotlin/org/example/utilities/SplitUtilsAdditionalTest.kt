@@ -1,5 +1,6 @@
 package org.example.utilities
 
+import dev.aurakai.auraframefx.utilities.StringUtils
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.example.list.LinkedList

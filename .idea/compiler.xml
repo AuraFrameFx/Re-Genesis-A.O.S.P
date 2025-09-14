@@ -1,35 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="24">
-      <module name="AOSPReGenesis" target="24" />
-      <module name="AOSPReGenesis.app" target="24" />
-      <module name="AOSPReGenesis.benchmark" target="24" />
-      <module name="AOSPReGenesis.collab-canvas" target="24" />
-      <module name="AOSPReGenesis.colorblendr" target="24" />
-      <module name="AOSPReGenesis.core-module" target="24" />
-      <module name="AOSPReGenesis.core-module.main" target="24" />
-      <module name="AOSPReGenesis.core-module.test" target="24" />
-      <module name="AOSPReGenesis.datavein-oracle-native" target="24" />
-      <module name="AOSPReGenesis.feature-module" target="17" />
-      <module name="AOSPReGenesis.list" target="24" />
-      <module name="AOSPReGenesis.list.main" target="24" />
-      <module name="AOSPReGenesis.list.test" target="24" />
-      <module name="AOSPReGenesis.main" target="24" />
-      <module name="AOSPReGenesis.module-a" target="24" />
-      <module name="AOSPReGenesis.module-b" target="24" />
-      <module name="AOSPReGenesis.module-c" target="24" />
-      <module name="AOSPReGenesis.module-d" target="24" />
-      <module name="AOSPReGenesis.module-e" target="24" />
-      <module name="AOSPReGenesis.module-f" target="24" />
-      <module name="AOSPReGenesis.oracle-drive-integration" target="24" />
-      <module name="AOSPReGenesis.romtools" target="17" />
-      <module name="AOSPReGenesis.sandbox-ui" target="17" />
-      <module name="AOSPReGenesis.secure-comm" target="24" />
-      <module name="AOSPReGenesis.test" target="24" />
-      <module name="AOSPReGenesis.utilities" target="24" />
-      <module name="AOSPReGenesis.utilities.main" target="24" />
-      <module name="AOSPReGenesis.utilities.test" target="24" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="24" />
   </component>
 </project>

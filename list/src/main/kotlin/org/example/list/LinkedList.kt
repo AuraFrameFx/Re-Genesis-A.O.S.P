@@ -114,17 +114,14 @@ class LinkedList {
      * @throws IndexOutOfBoundsException if no element exists at the requested index.
      */
     fun get(idx: Int): String {
+        if (idx < 0) throw IndexOutOfBoundsException("Index: $idx")
         var index = idx
         var it = head
         while (index > 0 && it != null) {
             it = it.next
             index--
         }
-
-        if (it == null) {
-            throw IndexOutOfBoundsException("Index is out of range")
-        }
-
+        if (it == null) throw IndexOutOfBoundsException("Index: $idx")
         return it.data
     }
 

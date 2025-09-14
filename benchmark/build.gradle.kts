@@ -107,7 +107,7 @@ dependencies {
     testImplementation(libs.hilt.android.testing)
     androidTestImplementation(libs.hilt.android.testing)
     kspAndroidTest(libs.hilt.compiler)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
+    implementation(kotlin("stdlib-jdk8"))
 
     // Serialization
     implementation(libs.kotlinx.serialization.json)

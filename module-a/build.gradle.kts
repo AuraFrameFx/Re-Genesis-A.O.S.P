@@ -1,9 +1,18 @@
 // GENESIS PROTOCOL - MODULE A
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath(libs.gradle)
+    }
+}
+
 plugins {
     id("genesis.android.library")
     id("genesis.android.compose")
     alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
 }
 
 android {

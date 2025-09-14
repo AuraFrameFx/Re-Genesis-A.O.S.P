@@ -11,28 +11,28 @@ import org.gradle.kotlin.dsl.*
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     /**
-     * Configures an Android application project with Genesis conventions.
+     * Configures an Android application Project with Genesis conventions.
      *
-     * Applies core plugins (Android application, Kotlin Compose), and configures the Android
-     * ApplicationExtension with sensible defaults for compile/target/min SDKs, build types,
-     * Compose, packaging, lint, and desugaring. Also sets Java/Kotlin JVM toolchains to Java 24,
-     * registers a `cleanKspCache` task to remove KSP/KAPT generated caches, and makes `preBuild`
-     * depend on that clean task.
-     *
-     * @param target The Gradle project the plugin is being applied to.
+     * Applies the Android application and Kotlin Android plugins; sets Android defaults
+     * (compile/target/min SDKs, test runner, vector drawables), build types (release ProGuard
+     * optimization and resource shrinking), enabled build features (Compose, BuildConfig),
+     * compile options (core library desugaring), packaging exclusions and JNI packaging rules,
+     * and lint settings. Also sets the Java toolchain to Java 24, registers a `cleanKspCache`
+     * Delete task that removes common KSP/KAPT generated caches, and makes the `preBuild`
+     * task depend on that clean task.
      */
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
                 apply("com.android.application")
-                apply("org.jetbrains.compose")
+                apply("org.jetbrains.kotlin.android")
             }
 
             extensions.configure<ApplicationExtension> {
-                compileSdk = 36
+                compileSdk = 35
 
                 defaultConfig {
-                    targetSdk = 36
+                    targetSdk = 35
                     minSdk = 34
 
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

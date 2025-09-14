@@ -3,8 +3,9 @@
 
 plugins {
     id("genesis.android.library")
-    alias(libs.plugins.kotlin.compose)
+    id("org.jetbrains.kotlin.plugin.compose")
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.android)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 

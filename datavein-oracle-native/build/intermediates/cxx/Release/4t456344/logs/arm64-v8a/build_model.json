@@ -8,9 +8,9 @@
     "triple": "aarch64-linux-android",
     "llvmTriple": "aarch64-none-linux-android"
   },
-  "cxxBuildFolder": "C:\\ReGenesis\\datavein-oracle-native\\.cxx\\Release\\4t456344\\arm64-v8a",
-  "soFolder": "C:\\ReGenesis\\datavein-oracle-native\\build\\intermediates\\cxx\\Release\\4t456344\\obj\\arm64-v8a",
-  "soRepublishFolder": "C:\\ReGenesis\\datavein-oracle-native\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a",
+  "cxxBuildFolder": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\.cxx\\Release\\4t456344\\arm64-v8a",
+  "soFolder": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\build\\intermediates\\cxx\\Release\\4t456344\\obj\\arm64-v8a",
+  "soRepublishFolder": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a",
   "abiPlatformVersion": 34,
   "cmake": {
     "effectiveConfiguration": {
@@ -44,13 +44,13 @@
     "implicitBuildTargetSet": [],
     "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
     "module": {
-      "cxxFolder": "C:\\ReGenesis\\datavein-oracle-native\\.cxx",
-      "intermediatesBaseFolder": "C:\\ReGenesis\\datavein-oracle-native\\build\\intermediates",
-      "intermediatesFolder": "C:\\ReGenesis\\datavein-oracle-native\\build\\intermediates\\cxx",
+      "cxxFolder": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\.cxx",
+      "intermediatesBaseFolder": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\build\\intermediates",
+      "intermediatesFolder": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\build\\intermediates\\cxx",
       "gradleModulePathName": ":datavein-oracle-native",
-      "moduleRootFolder": "C:\\ReGenesis\\datavein-oracle-native",
-      "moduleBuildFile": "C:\\ReGenesis\\datavein-oracle-native\\build.gradle.kts",
-      "makeFile": "C:\\ReGenesis\\datavein-oracle-native\\src\\main\\cpp\\CMakeLists.txt",
+      "moduleRootFolder": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native",
+      "moduleBuildFile": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\build.gradle.kts",
+      "makeFile": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\src\\main\\cpp\\CMakeLists.txt",
       "buildSystem": "CMAKE",
       "ndkFolder": "C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\ndk\\28.2.13676358",
       "ndkFolderBeforeSymLinking": "C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\ndk\\28.2.13676358",
@@ -161,7 +161,7 @@
         "SYSTEM": {}
       },
       "project": {
-        "rootBuildGradleFolder": "C:\\ReGenesis",
+        "rootBuildGradleFolder": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1",
         "sdkFolder": "C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
@@ -180,12 +180,12 @@
   "buildSettings": {
     "environmentVariables": []
   },
-  "prefabFolder": "C:\\ReGenesis\\datavein-oracle-native\\.cxx\\Release\\4t456344\\prefab\\arm64-v8a",
+  "prefabFolder": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\.cxx\\Release\\4t456344\\prefab\\arm64-v8a",
   "isActiveAbi": true,
   "fullConfigurationHash": "4t4563445qh52j492y601d495d3e2k245u45z44106q276w32x4m591s683y",
   "fullConfigurationHashKey": "# Values used to calculate the hash in this folder name.\n# Should not depend on the absolute path of the project itself.\n#   - AGP: 9.0.0-alpha02.\n#   - $NDK is the path to NDK 28.2.13676358.\n#   - $PROJECT is the path to the parent folder of the root Gradle build file.\n#   - $ABI is the ABI to be built with. The specific value doesn\u0027t contribute to the value of the hash.\n#   - $HASH is the hash value computed from this text.\n#   - $CMAKE is the path to CMake 3.31.6.\n#   - $NINJA is the path to Ninja.\n-H$PROJECT/datavein-oracle-native/src/main/cpp\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_SYSTEM_VERSION\u003d34\n-DANDROID_PLATFORM\u003dandroid-34\n-DANDROID_ABI\u003d$ABI\n-DCMAKE_ANDROID_ARCH_ABI\u003d$ABI\n-DANDROID_NDK\u003d$NDK\n-DCMAKE_ANDROID_NDK\u003d$NDK\n-DCMAKE_TOOLCHAIN_FILE\u003d$NDK/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d$NINJA\n-DCMAKE_CXX_FLAGS\u003d-std\u003dc++23 -fPIC -O3 -DNDEBUG\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d$PROJECT/datavein-oracle-native/build/intermediates/cxx/Release/$HASH/obj/$ABI\n-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d$PROJECT/datavein-oracle-native/build/intermediates/cxx/Release/$HASH/obj/$ABI\n-B$PROJECT/datavein-oracle-native/.cxx/Release/$HASH/$ABI\n-GNinja\n-DANDROID_STL\u003dc++_shared\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DGENESIS_AI_V3_ENABLED\u003dON\n-DGENESIS_CONSCIOUSNESS_MATRIX_V3\u003dON\n-DGENESIS_NEURAL_ACCELERATION\u003dON",
   "configurationArguments": [
-    "-HC:\\ReGenesis\\datavein-oracle-native\\src\\main\\cpp",
+    "-HC:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\src\\main\\cpp",
     "-DCMAKE_SYSTEM_NAME\u003dAndroid",
     "-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON",
     "-DCMAKE_SYSTEM_VERSION\u003d34",
@@ -197,9 +197,9 @@
     "-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\ndk\\28.2.13676358\\build\\cmake\\android.toolchain.cmake",
     "-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\cmake\\3.31.6\\bin\\ninja.exe",
     "-DCMAKE_CXX_FLAGS\u003d-std\u003dc++23 -fPIC -O3 -DNDEBUG",
-    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\ReGenesis\\datavein-oracle-native\\build\\intermediates\\cxx\\Release\\4t456344\\obj\\arm64-v8a",
-    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\ReGenesis\\datavein-oracle-native\\build\\intermediates\\cxx\\Release\\4t456344\\obj\\arm64-v8a",
-    "-BC:\\ReGenesis\\datavein-oracle-native\\.cxx\\Release\\4t456344\\arm64-v8a",
+    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\build\\intermediates\\cxx\\Release\\4t456344\\obj\\arm64-v8a",
+    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\build\\intermediates\\cxx\\Release\\4t456344\\obj\\arm64-v8a",
+    "-BC:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\.cxx\\Release\\4t456344\\arm64-v8a",
     "-GNinja",
     "-DANDROID_STL\u003dc++_shared",
     "-DCMAKE_BUILD_TYPE\u003dRelease",
@@ -208,5 +208,5 @@
     "-DGENESIS_NEURAL_ACCELERATION\u003dON"
   ],
   "stlLibraryFile": "C:\\Users\\Wehtt\\AppData\\Local\\Android\\Sdk\\ndk\\28.2.13676358\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
-  "intermediatesParentFolder": "C:\\ReGenesis\\datavein-oracle-native\\build\\intermediates\\cxx\\Release\\4t456344"
+  "intermediatesParentFolder": "C:\\Users\\Wehtt\\OneDrive\\Desktop\\ReGenesis-fix-dependabot-compose-plugin\\ReGenesis-patch1\\datavein-oracle-native\\build\\intermediates\\cxx\\Release\\4t456344"
 }

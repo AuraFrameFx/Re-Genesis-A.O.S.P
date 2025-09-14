@@ -1,4 +1,4 @@
-# Install script for directory: C:/ReGenesis/secure-comm/src/main/cpp
+# Install script for directory: C:/Users/Wehtt/OneDrive/Desktop/ReGenesis-fix-dependabot-compose-plugin/ReGenesis-patch1/secure-comm/src/main/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/ReGenesis/secure-comm/.cxx/RelWithDebInfo/304n211z/x86/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Wehtt/OneDrive/Desktop/ReGenesis-fix-dependabot-compose-plugin/ReGenesis-patch1/secure-comm/.cxx/RelWithDebInfo/304n211z/x86/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

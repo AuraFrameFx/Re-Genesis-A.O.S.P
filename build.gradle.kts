@@ -2,9 +2,11 @@ import org.gradle.api.JavaVersion
 // build-logic/build.gradle.kts
 
 plugins {
-    // No version is needed here. Gradle applies the correct version automatically.
-    `kotlin-dsl`
-    id("io.gitlab.arturbosch.detekt") version "1.23.8"
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.compose) apply false
+    alias(libs.plugins.ksp) apply false
 }
 
 // Find version catalog
@@ -110,10 +112,4 @@ if (file("nuclear-clean.gradle.kts").exists()) {
 if (file("dependency-fix.gradle.kts").exists()) {
     apply(from = "dependency-fix.gradle.kts")
 
-}
-
-detekt {
-    config.from("$rootDir/detekt/detekt.yml")
-    buildUponDefaultConfig = true
-    allRules = false
 }

@@ -1,10 +1,12 @@
 // ==== GENESIS PROTOCOL - ANDROID COMPOSE CONVENTION ====
 // Compose-enabled Android library configuration
 
+import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.*
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 
 class AndroidComposeConventionPlugin : Plugin<Project> {
     /**
@@ -22,14 +24,20 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
             // Apply the base library convention first
             pluginManager.apply("genesis.android.library")
 
-            // Note: Kotlin Compose plugin not available for Kotlin 2.2.20-RC
-            // Instead, AGP 9.0+ handles Compose configuration automatically
+            // Try to configure as LibraryExtension first
+            extensions.findByType(LibraryExtension::class.java)?.let {
+                it.buildFeatures.compose = true
+                it.composeOptions.kotlinCompilerExtensionVersion = "1.8.2"
+            }
+            // If not a library, try ApplicationExtension
+            extensions.findByType(ApplicationExtension::class.java)?.let {
+                it.buildFeatures.compose = true
+                it.composeOptions.kotlinCompilerExtensionVersion = "1.8.2"
+            }
 
-            extensions.configure<LibraryExtension> {
-                // Note: Compose disabled due to Kotlin 2.2.20-RC compatibility issues
-                // buildFeatures {
-                //     compose = true
-                // }
+            // Add Compose BOM to dependencies for version alignment
+            dependencies {
+                add("implementation", platform("androidx.compose:compose-bom:2025.09.00"))
             }
         }
     }

@@ -2,6 +2,7 @@ plugins {
     id("com.android.library") version libs.versions.agp
     id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -50,7 +51,7 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     // androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
+    implementation(kotlin("stdlib-jdk8"))
     implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.hilt.navigation.compose)
 }

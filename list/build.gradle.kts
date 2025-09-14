@@ -1,5 +1,11 @@
 plugins {
     kotlin("jvm")
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
+    alias(libs.plugins.dokka)
+    alias(libs.plugins.spotless)
+    `maven-publish`
+    `java-library`
+    alias(libs.plugins.compose.compiler)
 }
 
 group = "dev.aurakai.auraframefx.list"
@@ -15,10 +21,14 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.bundles.coroutines)
-
+    implementation("androidx.compose.runtime:runtime:1.8.2")
+    // Compose runtime for JVM, add at runtime as needed for Compose features
+    // Hilt dependencies (add at runtime if needed for DI)
+    implementation("com.google.dagger:hilt-core:2.57.1") // Uncomment if Hilt is needed in this module    // ksp("com.google.dagger:hilt-compiler:2.57.1")
     testImplementation(libs.junit4)
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.platform.launcher)
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation(libs.mockk)
 }
 

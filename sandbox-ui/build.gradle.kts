@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.android)
 }
 apply(plugin = "org.jetbrains.compose")
 
@@ -42,7 +43,7 @@ dependencies {
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.register("sandboxStatus") {
