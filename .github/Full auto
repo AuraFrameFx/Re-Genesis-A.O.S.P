@@ -1,9 +1,11 @@
 name: 🎓 Genesis Protocol - FULLY AUTO
 on:
   push:
-    branches: [ Autonomous-Revelation fix-dependabot-compose-plugin ]
+on:
+  push:
+    branches: [Autonomous-Revelation, fix-dependabot-compose-plugin]
   pull_request:
-    branches: [ Autonomous-Revelation fix-dependabot-compose-plugin ]
+    branches: [Autonomous-Revelation, fix-dependabot-compose-plugin]
   workflow_dispatch:
 env:
   JAVA_VERSION: '24'
