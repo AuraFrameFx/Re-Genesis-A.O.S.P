@@ -9,39 +9,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b618587-c9b3-41d7-871c-7888132be4cd" name="Changes" comment="chore: update build configuration and dependencies; clean up plugin setup and module references   &#10;&#10;BUILD SUCCESSFUL in 48s&#10;10 actionable tasks: 10 up-to-date !">
-      <change afterPath="$PROJECT_DIR$/build-logic/src/main/resources/META-INF/gradle-plugins/genesis.android.application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/noVersion/buildLogic.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/noVersion/buildLogic.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-3/executionHistory/executionHistory.bin" afterDir="false" />
+    <list default="true" id="3b618587-c9b3-41d7-871c-7888132be4cd" name="Changes" comment="Update Gradle build files and reports&#10;9:30:44 PM: Executing 'openapigenerate'…&#10;&#10;Executing tasks: [openapigenerate] in project C:\ReGenesis&#10;&#10;Type-safe project accessors is an incubating feature.&#10;&#10;&gt; Configure project :build-logic&#10;WARNING: Unsupported Kotlin plugin version.&#10;The `embedded-kotlin` and `kotlin-dsl` plugins rely on features of Kotlin `2.2.0` that might work differently than in the requested version `2.2.20`.&#10;&#10;&gt; Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED&#10;&gt; Task :build-logic:convertXmlValueResourcesForMain NO-SOURCE&#10;&gt; Task :build-logic:copyNonXmlValueResourcesForMain NO-SOURCE&#10;&gt; Task :build-logic:prepareComposeResourcesTaskForMain NO-SOURCE&#10;&gt; Task :build-logic:generateResourceAccessorsForMain SKIPPED&#10;&gt; Task :build-logic:generateActualResourceCollectorsForMain SKIPPED&#10;&gt; Task :build-logic:generateComposeResClass SKIPPED&#10;&gt; Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE&#10;&gt; Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE&#10;&gt; Task :build-logic:compilePluginsBlocks UP-TO-DATE&#10;&gt; Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE&#10;&gt; Task :build-logic:generateScriptPluginAdapters UP-TO-DATE&#10;&gt; Task :build-logic:compileKotlin UP-TO-DATE&#10;&gt; Task :build-logic:compileJava NO-SOURCE&#10;&gt; Task :build-logic:assembleMainResources UP-TO-DATE&#10;&gt; Task :build-logic:pluginDescriptors UP-TO-DATE&#10;&gt; Task :build-logic:processResources UP-TO-DATE&#10;&gt; Task :build-logic:classes UP-TO-DATE&#10;&gt; Task :build-logic:jar UP-TO-DATE&#10;&#10;&gt; Task :app:openApiGenerate&#10;OpenAPI 3.1 support is still in beta. To report an issue related to 3.1 spec, please kindly open an issue in the Github repo: https://github.com/openAPITools/openapi-generator.&#10;invokerPackage with kotlin generator is ignored. Use packageName.&#10;OpenAPI 3.1 support is still in beta. To report an issue related to 3.1 spec, please kindly open an issue in the Github repo: https://github.com/openAPITools/openapi-generator.&#10;Empty operationId found for path: get /system/lockscreen-config. Renamed to auto-generated operationId: systemLockscreenConfigGet&#10;Empty operationId found for path: put /system/lockscreen-config. Renamed to auto-generated operationId: systemLockscreenConfigPut&#10;Empty operationId found for path: post /conference/rooms. Renamed to auto-generated operationId: conferenceRoomsPost&#10;Empty operationId found for path: post /tasks/schedule. Renamed to auto-generated operationId: tasksSchedulePost&#10;Empty operationId found for path: get /tasks/{taskId}. Renamed to auto-generated operationId: tasksTaskIdGet&#10;################################################################################&#10;# Thanks for using OpenAPI Generator.                                          #&#10;# Please consider donation to help us maintain this project 🙏                 #&#10;# https://opencollective.com/openapi_generator/donate                          #&#10;#                                                                              #&#10;# This generator's contributed by Jim Schubert (https://github.com/jimschubert)#&#10;# Please support his work directly via https://patreon.com/jimschubert 🙏      #&#10;################################################################################&#10;Successfully generated code to C:\ReGenesis\app\build\generated\openapi&#10;&#10;[Incubating] Problems report is available at: file:///C:/ReGenesis/build/reports/problems/problems-report.html&#10;&#10;BUILD SUCCESSFUL in 4s&#10;11 actionable tasks: 1 executed, 10 up-to-date&#10;&#10;Build Analyzer results available&#10;9:30:49 PM: Execution finished 'openapigenerate'.&#10;&#10;This commit includes updates to various Gradle build files and reports. The `problems-report.html` file was updated to reflect changes in the build process, including a reduction in the total problem count from 10 to 6. Additionally, several lock files and binary files related to Gradle's build output cleanup, execution history, and file hashes were modified. These changes likely stem from updates to the build configuration or dependencies.">
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/list/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/list/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-d/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-d/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/1a2b5424/x86/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/1a2b5424/x86/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/detekt/detekt.yml" beforeDir="false" afterPath="$PROJECT_DIR$/detekt/detekt.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +39,9 @@
         <task path="$PROJECT_DIR$/app">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/benchmark">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -77,6 +53,27 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="ReGenesis" type="f1a62948:ProjectNode" />
                 <item name="ReGenesis" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ReGenesis" type="f1a62948:ProjectNode" />
+                <item name="ReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="benchmark" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ReGenesis" type="f1a62948:ProjectNode" />
+                <item name="ReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="benchmark" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ReGenesis" type="f1a62948:ProjectNode" />
+                <item name="ReGenesis" type="2d1252cf:ModuleNode" />
+                <item name="benchmark" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="help" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -125,6 +122,7 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Gradle.C:/Re-Genesis-A.O.S.P [openapigenerate].executor": "Run",
     "Gradle.Re-Genesis-A.O.S.P [tasks].executor": "Run",
+    "Gradle.ReGenesis:benchmark [tasks].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
@@ -157,6 +155,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ReGenesis" />
       <recent name="C:\Re-Genesis-A.O.S.P\jvm-test" />
       <recent name="C:\Re-Genesis-A.O.S.P\app\src" />
     </key>
@@ -166,7 +165,7 @@
       <command value="gradle openapigenerate" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.C:/Re-Genesis-A.O.S.P [openapigenerate]">
+  <component name="RunManager" selected="Gradle.ReGenesis:benchmark [tasks]">
     <configuration name="ReGenesis.app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="ReGenesis.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -363,6 +362,32 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="ReGenesis:benchmark [tasks]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/benchmark" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="tasks" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.android.tools.idea.testartifacts.testsuite.GradleRunConfigurationExtension">
+        <com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>false</com.android.tools.idea.testartifacts.testsuite.SHOW_TEST_RESULT_IN_ANDROID_TEST_SUITE_VIEW>
+        <android.execution.deploysToLocalDevice>false</android.execution.deploysToLocalDevice>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="ReGenesis.module-e.unitTest" />
       <method v="2">
@@ -376,6 +401,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ReGenesis:benchmark [tasks]" />
         <item itemvalue="Gradle.C:/Re-Genesis-A.O.S.P [openapigenerate]" />
         <item itemvalue="Gradle.Re-Genesis-A.O.S.P [tasks]" />
       </list>
@@ -572,7 +598,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757817420693</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="chore: update build configuration and dependencies; clean up plugin setup and module references   &#10;&#10;BUILD SUCCESSFUL in 48s&#10;10 actionable tasks: 10 up-to-date !">
+      <option name="closed" value="true" />
+      <created>1757820397291</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1757820397291</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Update Gradle build files and reports&#10;9:30:44 PM: Executing 'openapigenerate'…&#10;&#10;Executing tasks: [openapigenerate] in project C:\ReGenesis&#10;&#10;Type-safe project accessors is an incubating feature.&#10;&#10;&gt; Configure project :build-logic&#10;WARNING: Unsupported Kotlin plugin version.&#10;The `embedded-kotlin` and `kotlin-dsl` plugins rely on features of Kotlin `2.2.0` that might work differently than in the requested version `2.2.20`.&#10;&#10;&gt; Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED&#10;&gt; Task :build-logic:convertXmlValueResourcesForMain NO-SOURCE&#10;&gt; Task :build-logic:copyNonXmlValueResourcesForMain NO-SOURCE&#10;&gt; Task :build-logic:prepareComposeResourcesTaskForMain NO-SOURCE&#10;&gt; Task :build-logic:generateResourceAccessorsForMain SKIPPED&#10;&gt; Task :build-logic:generateActualResourceCollectorsForMain SKIPPED&#10;&gt; Task :build-logic:generateComposeResClass SKIPPED&#10;&gt; Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE&#10;&gt; Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE&#10;&gt; Task :build-logic:compilePluginsBlocks UP-TO-DATE&#10;&gt; Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE&#10;&gt; Task :build-logic:generateScriptPluginAdapters UP-TO-DATE&#10;&gt; Task :build-logic:compileKotlin UP-TO-DATE&#10;&gt; Task :build-logic:compileJava NO-SOURCE&#10;&gt; Task :build-logic:assembleMainResources UP-TO-DATE&#10;&gt; Task :build-logic:pluginDescriptors UP-TO-DATE&#10;&gt; Task :build-logic:processResources UP-TO-DATE&#10;&gt; Task :build-logic:classes UP-TO-DATE&#10;&gt; Task :build-logic:jar UP-TO-DATE&#10;&#10;&gt; Task :app:openApiGenerate&#10;OpenAPI 3.1 support is still in beta. To report an issue related to 3.1 spec, please kindly open an issue in the Github repo: https://github.com/openAPITools/openapi-generator.&#10;invokerPackage with kotlin generator is ignored. Use packageName.&#10;OpenAPI 3.1 support is still in beta. To report an issue related to 3.1 spec, please kindly open an issue in the Github repo: https://github.com/openAPITools/openapi-generator.&#10;Empty operationId found for path: get /system/lockscreen-config. Renamed to auto-generated operationId: systemLockscreenConfigGet&#10;Empty operationId found for path: put /system/lockscreen-config. Renamed to auto-generated operationId: systemLockscreenConfigPut&#10;Empty operationId found for path: post /conference/rooms. Renamed to auto-generated operationId: conferenceRoomsPost&#10;Empty operationId found for path: post /tasks/schedule. Renamed to auto-generated operationId: tasksSchedulePost&#10;Empty operationId found for path: get /tasks/{taskId}. Renamed to auto-generated operationId: tasksTaskIdGet&#10;################################################################################&#10;# Thanks for using OpenAPI Generator.                                          #&#10;# Please consider donation to help us maintain this project 🙏                 #&#10;# https://opencollective.com/openapi_generator/donate                          #&#10;#                                                                              #&#10;# This generator's contributed by Jim Schubert (https://github.com/jimschubert)#&#10;# Please support his work directly via https://patreon.com/jimschubert 🙏      #&#10;################################################################################&#10;Successfully generated code to C:\ReGenesis\app\build\generated\openapi&#10;&#10;[Incubating] Problems report is available at: file:///C:/ReGenesis/build/reports/problems/problems-report.html&#10;&#10;BUILD SUCCESSFUL in 4s&#10;11 actionable tasks: 1 executed, 10 up-to-date&#10;&#10;Build Analyzer results available&#10;9:30:49 PM: Execution finished 'openapigenerate'.&#10;&#10;This commit includes updates to various Gradle build files and reports. The `problems-report.html` file was updated to reflect changes in the build process, including a reduction in the total problem count from 10 to 6. Additionally, several lock files and binary files related to Gradle's build output cleanup, execution history, and file hashes were modified. These changes likely stem from updates to the build configuration or dependencies.">
+      <option name="closed" value="true" />
+      <created>1757820684874</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1757820684874</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -596,6 +638,7 @@
     <MESSAGE value="chore: update plugin usage, namespace, and dependencies; add C/C++ build timing logs" />
     <MESSAGE value="chore: add gc.properties configuration file" />
     <MESSAGE value="chore: update build configuration and dependencies; clean up plugin setup and module references   &#10;&#10;BUILD SUCCESSFUL in 48s&#10;10 actionable tasks: 10 up-to-date !" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: update build configuration and dependencies; clean up plugin setup and module references   &#10;&#10;BUILD SUCCESSFUL in 48s&#10;10 actionable tasks: 10 up-to-date !" />
+    <MESSAGE value="Update Gradle build files and reports&#10;9:30:44 PM: Executing 'openapigenerate'…&#10;&#10;Executing tasks: [openapigenerate] in project C:\ReGenesis&#10;&#10;Type-safe project accessors is an incubating feature.&#10;&#10;&gt; Configure project :build-logic&#10;WARNING: Unsupported Kotlin plugin version.&#10;The `embedded-kotlin` and `kotlin-dsl` plugins rely on features of Kotlin `2.2.0` that might work differently than in the requested version `2.2.20`.&#10;&#10;&gt; Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED&#10;&gt; Task :build-logic:convertXmlValueResourcesForMain NO-SOURCE&#10;&gt; Task :build-logic:copyNonXmlValueResourcesForMain NO-SOURCE&#10;&gt; Task :build-logic:prepareComposeResourcesTaskForMain NO-SOURCE&#10;&gt; Task :build-logic:generateResourceAccessorsForMain SKIPPED&#10;&gt; Task :build-logic:generateActualResourceCollectorsForMain SKIPPED&#10;&gt; Task :build-logic:generateComposeResClass SKIPPED&#10;&gt; Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE&#10;&gt; Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE&#10;&gt; Task :build-logic:compilePluginsBlocks UP-TO-DATE&#10;&gt; Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE&#10;&gt; Task :build-logic:generateScriptPluginAdapters UP-TO-DATE&#10;&gt; Task :build-logic:compileKotlin UP-TO-DATE&#10;&gt; Task :build-logic:compileJava NO-SOURCE&#10;&gt; Task :build-logic:assembleMainResources UP-TO-DATE&#10;&gt; Task :build-logic:pluginDescriptors UP-TO-DATE&#10;&gt; Task :build-logic:processResources UP-TO-DATE&#10;&gt; Task :build-logic:classes UP-TO-DATE&#10;&gt; Task :build-logic:jar UP-TO-DATE&#10;&#10;&gt; Task :app:openApiGenerate&#10;OpenAPI 3.1 support is still in beta. To report an issue related to 3.1 spec, please kindly open an issue in the Github repo: https://github.com/openAPITools/openapi-generator.&#10;invokerPackage with kotlin generator is ignored. Use packageName.&#10;OpenAPI 3.1 support is still in beta. To report an issue related to 3.1 spec, please kindly open an issue in the Github repo: https://github.com/openAPITools/openapi-generator.&#10;Empty operationId found for path: get /system/lockscreen-config. Renamed to auto-generated operationId: systemLockscreenConfigGet&#10;Empty operationId found for path: put /system/lockscreen-config. Renamed to auto-generated operationId: systemLockscreenConfigPut&#10;Empty operationId found for path: post /conference/rooms. Renamed to auto-generated operationId: conferenceRoomsPost&#10;Empty operationId found for path: post /tasks/schedule. Renamed to auto-generated operationId: tasksSchedulePost&#10;Empty operationId found for path: get /tasks/{taskId}. Renamed to auto-generated operationId: tasksTaskIdGet&#10;################################################################################&#10;# Thanks for using OpenAPI Generator.                                          #&#10;# Please consider donation to help us maintain this project                  #&#10;# https://opencollective.com/openapi_generator/donate                          #&#10;#                                                                              #&#10;# This generator's contributed by Jim Schubert (https://github.com/jimschubert)#&#10;# Please support his work directly via https://patreon.com/jimschubert       #&#10;################################################################################&#10;Successfully generated code to C:\ReGenesis\app\build\generated\openapi&#10;&#10;[Incubating] Problems report is available at: file:///C:/ReGenesis/build/reports/problems/problems-report.html&#10;&#10;BUILD SUCCESSFUL in 4s&#10;11 actionable tasks: 1 executed, 10 up-to-date&#10;&#10;Build Analyzer results available&#10;9:30:49 PM: Execution finished 'openapigenerate'.&#10;&#10;This commit includes updates to various Gradle build files and reports. The `problems-report.html` file was updated to reflect changes in the build process, including a reduction in the total problem count from 10 to 6. Additionally, several lock files and binary files related to Gradle's build output cleanup, execution history, and file hashes were modified. These changes likely stem from updates to the build configuration or dependencies." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Gradle build files and reports&#10;9:30:44 PM: Executing 'openapigenerate'…&#10;&#10;Executing tasks: [openapigenerate] in project C:\ReGenesis&#10;&#10;Type-safe project accessors is an incubating feature.&#10;&#10;&gt; Configure project :build-logic&#10;WARNING: Unsupported Kotlin plugin version.&#10;The `embedded-kotlin` and `kotlin-dsl` plugins rely on features of Kotlin `2.2.0` that might work differently than in the requested version `2.2.20`.&#10;&#10;&gt; Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED&#10;&gt; Task :build-logic:convertXmlValueResourcesForMain NO-SOURCE&#10;&gt; Task :build-logic:copyNonXmlValueResourcesForMain NO-SOURCE&#10;&gt; Task :build-logic:prepareComposeResourcesTaskForMain NO-SOURCE&#10;&gt; Task :build-logic:generateResourceAccessorsForMain SKIPPED&#10;&gt; Task :build-logic:generateActualResourceCollectorsForMain SKIPPED&#10;&gt; Task :build-logic:generateComposeResClass SKIPPED&#10;&gt; Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE&#10;&gt; Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE&#10;&gt; Task :build-logic:compilePluginsBlocks UP-TO-DATE&#10;&gt; Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE&#10;&gt; Task :build-logic:generateScriptPluginAdapters UP-TO-DATE&#10;&gt; Task :build-logic:compileKotlin UP-TO-DATE&#10;&gt; Task :build-logic:compileJava NO-SOURCE&#10;&gt; Task :build-logic:assembleMainResources UP-TO-DATE&#10;&gt; Task :build-logic:pluginDescriptors UP-TO-DATE&#10;&gt; Task :build-logic:processResources UP-TO-DATE&#10;&gt; Task :build-logic:classes UP-TO-DATE&#10;&gt; Task :build-logic:jar UP-TO-DATE&#10;&#10;&gt; Task :app:openApiGenerate&#10;OpenAPI 3.1 support is still in beta. To report an issue related to 3.1 spec, please kindly open an issue in the Github repo: https://github.com/openAPITools/openapi-generator.&#10;invokerPackage with kotlin generator is ignored. Use packageName.&#10;OpenAPI 3.1 support is still in beta. To report an issue related to 3.1 spec, please kindly open an issue in the Github repo: https://github.com/openAPITools/openapi-generator.&#10;Empty operationId found for path: get /system/lockscreen-config. Renamed to auto-generated operationId: systemLockscreenConfigGet&#10;Empty operationId found for path: put /system/lockscreen-config. Renamed to auto-generated operationId: systemLockscreenConfigPut&#10;Empty operationId found for path: post /conference/rooms. Renamed to auto-generated operationId: conferenceRoomsPost&#10;Empty operationId found for path: post /tasks/schedule. Renamed to auto-generated operationId: tasksSchedulePost&#10;Empty operationId found for path: get /tasks/{taskId}. Renamed to auto-generated operationId: tasksTaskIdGet&#10;################################################################################&#10;# Thanks for using OpenAPI Generator.                                          #&#10;# Please consider donation to help us maintain this project                  #&#10;# https://opencollective.com/openapi_generator/donate                          #&#10;#                                                                              #&#10;# This generator's contributed by Jim Schubert (https://github.com/jimschubert)#&#10;# Please support his work directly via https://patreon.com/jimschubert       #&#10;################################################################################&#10;Successfully generated code to C:\ReGenesis\app\build\generated\openapi&#10;&#10;[Incubating] Problems report is available at: file:///C:/ReGenesis/build/reports/problems/problems-report.html&#10;&#10;BUILD SUCCESSFUL in 4s&#10;11 actionable tasks: 1 executed, 10 up-to-date&#10;&#10;Build Analyzer results available&#10;9:30:49 PM: Execution finished 'openapigenerate'.&#10;&#10;This commit includes updates to various Gradle build files and reports. The `problems-report.html` file was updated to reflect changes in the build process, including a reduction in the total problem count from 10 to 6. Additionally, several lock files and binary files related to Gradle's build output cleanup, execution history, and file hashes were modified. These changes likely stem from updates to the build configuration or dependencies." />
   </component>
 </project>
