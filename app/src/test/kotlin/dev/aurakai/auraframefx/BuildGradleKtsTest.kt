@@ -76,7 +76,8 @@ class BuildGradleKtsTest {
     @DisplayName("DefaultConfig: ID, versioning, test runner, vector drawables")
     fun defaultConfig() {
         assertTrue(
-            Regex("""applicationId\s*=\s*"dev\.aurakai\.auraframefx"""").containsMatchIn(script),
+            Regex("""applicationId\s*=\s*\"dev\.aurakai\.auraframefx\"""
+            ).containsMatchIn(script),
             "Expected applicationId"
         )
         assertTrue(
@@ -84,29 +85,18 @@ class BuildGradleKtsTest {
             "Expected versionCode = 1"
         )
         assertTrue(
-            Regex("""versionCode\s*=\s*1\b""").containsMatchIn(script),
-            "Expected versionCode = 1"
-        )
-        assertTrue(
-            Regex("""versionName\s*=\s*"1\.0\.0-genesis-alpha"""").containsMatchIn(script),
+            Regex("""versionName\s*=\s*\"1\.0\.0-genesis-alpha\"""
+            ).containsMatchIn(script),
             "Expected versionName = 1.0.0-genesis-alpha"
         )
         assertTrue(
-            Regex("""testInstrumentationRunner\s*=\s*"androidx\.test\.runner\.AndroidJUnitRunner"""")
-                .containsMatchIn(script),
+            Regex("""testInstrumentationRunner\s*=\s*\"androidx\.test\.runner\.AndroidJUnitRunner\"""
+            ).containsMatchIn(script),
             "Expected AndroidJUnitRunner"
         )
         assertTrue(
-            Regex(
-                """vectorDrawables\s*\{[^}]*useSupportLibrary\s*=\s*true""",
-                RegexOption.DOT_MATCHES_ALL
-            )
-                    Regex (
-                    """vectorDrawables\s*\{[^}]*useSupportLibrary\s*=\s*true""",
-            RegexOption.DOT_MATCHES_ALL
-        )
-            .containsMatchIn(script),
-        "Expected vectorDrawables.useSupportLibrary = true"
+            Regex("vectorDrawables\\s*\\{[^}]*useSupportLibrary\\s*=\\s*true", RegexOption.DOT_MATCHES_ALL).containsMatchIn(script),
+            "Expected vectorDrawables.useSupportLibrary = true"
         )
     }
 
@@ -133,45 +123,23 @@ class BuildGradleKtsTest {
     @DisplayName("Build types: release enables minify/shrink and uses proguard files; debug has proguardFiles set")
     fun buildTypesConfigured() {
         assertTrue(
-            Regex(
-                """buildTypes\s*\{\s*[^}]*release\s*\{[^}]*isMinifyEnabled\s*=\s*true""",
-                RegexOption.DOT_MATCHES_ALL
-            )
-                    Regex (
-                    """buildTypes\s*\{\s*[^}]*release\s*\{[^}]*isMinifyEnabled\s*=\s*true""",
-            RegexOption.DOT_MATCHES_ALL
-        )
-            .containsMatchIn(script),
-        "Expected release.isMinifyEnabled = true"
+            Regex("""buildTypes\s*\{\s*[^}]*release\s*\{[^}]*isMinifyEnabled\s*=\s*true""", RegexOption.DOT_MATCHES_ALL
+            ).containsMatchIn(script),
+            "Expected release.isMinifyEnabled = true"
         )
         assertTrue(
-            Regex("""release\s*\{[^}]*isShrinkResources\s*=\s*true""", RegexOption.DOT_MATCHES_ALL)
-                .containsMatchIn(script),
+            Regex("""release\s*\{[^}]*isShrinkResources\s*=\s*true""", RegexOption.DOT_MATCHES_ALL
+            ).containsMatchIn(script),
             "Expected release.isShrinkResources = true"
         )
         assertTrue(
-            Regex(
-                """proguardFiles\([^)]*"proguard-android-optimize\.txt"[^)]*"proguard-rules\.pro"[^)]*\)""",
-                RegexOption.DOT_MATCHES_ALL
-            )
-                    Regex (
-                    """proguardFiles\([^)]*"proguard-android-optimize\.txt"[^)]*"proguard-rules\.pro"[^)]*\)""",
-            RegexOption.DOT_MATCHES_ALL
-        )
-            .containsMatchIn(script),
-        "Expected proguard files configuration"
+            Regex("""proguardFiles\([^)]*\"proguard-android-optimize\.txt\"[^)]*\"proguard-rules\.pro\"[^)]*\)""", RegexOption.DOT_MATCHES_ALL
+            ).containsMatchIn(script),
+            "Expected proguard files configuration"
         )
         assertTrue(
-            Regex(
-                """buildTypes\s*\{[^}]*debug\s*\{[^}]*proguardFiles\(""",
-                RegexOption.DOT_MATCHES_ALL
-            )
-                    Regex (
-                    """buildTypes\s*\{[^}]*debug\s*\{[^}]*proguardFiles\(""",
-            RegexOption.DOT_MATCHES_ALL
-        )
-            .containsMatchIn(script),
-        "Expected debug.proguardFiles to be present"
+            Regex("buildTypes\\s*\\{[^}]*debug\\s*\\{[^}]*proguardFiles\\(", RegexOption.DOT_MATCHES_ALL).containsMatchIn(script),
+            "Expected debug.proguardFiles to be present"
         )
     }
 
@@ -179,13 +147,13 @@ class BuildGradleKtsTest {
     @DisplayName("Packaging: resource excludes and jniLibs configuration")
     fun packagingConfigured() {
         val excludes = listOf(
-            """/META-INF/\{AL2\.0,LGPL2\.1\}""",
-            """/META-INF/DEPENDENCIES""",
-            """/META-INF/LICENSE(\.txt)?""",
-            """/META-INF/NOTICE(\.txt)?""",
-            """META-INF/\*\.kotlin_module""",
-            """\*\*/kotlin/\*\*""",
-            """\*\*/\*\.txt"""
+            "/META-INF/{AL2.0,LGPL2.1}",
+            "/META-INF/DEPENDENCIES",
+            "/META-INF/LICENSE(\.txt)?",
+            "/META-INF/NOTICE(\.txt)?",
+            "META-INF/.*\\.kotlin_module",
+            "**/kotlin/**",
+            "**/.*\\.txt"
         )
         excludes.forEach { pattern ->
             assertTrue(
@@ -194,16 +162,12 @@ class BuildGradleKtsTest {
             )
         }
         assertTrue(
-            Regex(
-                """jniLibs\s*\{[^}]*useLegacyPackaging\s*=\s*false""",
-                RegexOption.DOT_MATCHES_ALL
-            )
-                .containsMatchIn(script),
+            Regex("""jniLibs\s*\{[^}]*useLegacyPackaging\s*=\s*false""", RegexOption.DOT_MATCHES_ALL
+            ).containsMatchIn(script),
             "Expected jniLibs.useLegacyPackaging = false"
         )
         assertTrue(
-            Regex("""pickFirsts\s*\+\=\s*listOf\("(\*\*/)?libc\+\+_shared\.so",\s*"(\*\*/)?libjsc\.so"\)""")
-                .containsMatchIn(script),
+            Regex("pickFirsts\\s*\\+=\\s*listOf\\(\\"(\\*\\*/)?libc\\+\\+_shared\\.so\\",\\s*\\"(\\*\\*/)?libjsc\\.so\\"\\)").containsMatchIn(script),
             "Expected jniLibs.pickFirsts to include libc++_shared.so and libjsc.so"
         )
     }
@@ -212,18 +176,18 @@ class BuildGradleKtsTest {
     @DisplayName("Build features: compose/buildConfig enabled and viewBinding disabled")
     fun buildFeaturesConfigured() {
         assertTrue(
-            Regex("""buildFeatures\s*\{[^}]*compose\s*=\s*true""", RegexOption.DOT_MATCHES_ALL)
-                .containsMatchIn(script),
+            Regex("""buildFeatures\s*\{[^}]*compose\s*=\s*true""", RegexOption.DOT_MATCHES_ALL
+            ).containsMatchIn(script),
             "Expected compose = true"
         )
         assertTrue(
-            Regex("""buildFeatures\s*\{[^}]*buildConfig\s*=\s*true""", RegexOption.DOT_MATCHES_ALL)
-                .containsMatchIn(script),
+            Regex("""buildFeatures\s*\{[^}]*buildConfig\s*=\s*true""", RegexOption.DOT_MATCHES_ALL
+            ).containsMatchIn(script),
             "Expected buildConfig = true"
         )
         assertTrue(
-            Regex("""buildFeatures\s*\{[^}]*viewBinding\s*=\s*false""", RegexOption.DOT_MATCHES_ALL)
-                .containsMatchIn(script),
+            Regex("""buildFeatures\s*\{[^}]*viewBinding\s*=\s*false""", RegexOption.DOT_MATCHES_ALL
+            ).containsMatchIn(script),
             "Expected viewBinding = false"
         )
     }
@@ -232,12 +196,14 @@ class BuildGradleKtsTest {
     @DisplayName("Compile options: Java 24 source and target compatibility")
     fun compileOptionsConfigured() {
         assertTrue(
-            . containsMatchIn (script),
-        "Expected sourceCompatibility = JavaVersion.VERSION_24"
+            Regex("""sourceCompatibility\s*=\s*JavaVersion\.VERSION_24""
+            ).containsMatchIn(script),
+            "Expected sourceCompatibility = JavaVersion.VERSION_24"
         )
         assertTrue(
-            . containsMatchIn (script),
-        "Expected targetCompatibility = JavaVersion.VERSION_24"
+            Regex("""targetCompatibility\s*=\s*JavaVersion\.VERSION_24""
+            ).containsMatchIn(script),
+            "Expected targetCompatibility = JavaVersion.VERSION_24"
         )
     }
 
@@ -245,20 +211,23 @@ class BuildGradleKtsTest {
     @DisplayName("Tasks: cleanKspCache registered and preBuild dependsOn required tasks")
     fun tasksConfigured() {
         assertTrue(
-            Regex("""tasks\.register<Delete>\("cleanKspCache"\)""").containsMatchIn(script),
+            Regex("""tasks\.register<Delete>\(\"cleanKspCache\"\)""
+            ).containsMatchIn(script),
             "Expected registration of cleanKspCache task"
         )
         assertTrue(
-            . containsMatchIn (script),
-        "Expected preBuild.dependsOn(\"cleanKspCache\")"
+            Regex("""preBuild\.dependsOn\(\"cleanKspCache\"\)""
+            ).containsMatchIn(script),
+            "Expected preBuild.dependsOn(\"cleanKspCache\")"
         )
         assertTrue(
-            . containsMatchIn (script),
-        "Expected preBuild.dependsOn(\":cleanApiGeneration\")"
+            Regex("""preBuild\.dependsOn\(:cleanApiGeneration\)""
+            ).containsMatchIn(script),
+            "Expected preBuild.dependsOn(:cleanApiGeneration)"
         )
         assertTrue(
-            . containsMatchIn (script),
-        "Expected preBuild.dependsOn(\":openApiGenerate\")"
+            Regex("preBuild\\.dependsOn\\(:openApiGenerate\\)").containsMatchIn(script),
+            "Expected preBuild.dependsOn(:openApiGenerate)"
         )
     }
 
@@ -285,7 +254,7 @@ class BuildGradleKtsTest {
     @DisplayName("Cleanup tasks script is applied")
     fun cleanupTasksApplied() {
         assertTrue(
-            Regex("""apply\(from\s*=\s*"cleanup-tasks\.gradle\.kts"\)""").containsMatchIn(script),
+            Regex("apply\\(from\\s*=\\s*\\"cleanup-tasks\\.gradle\\.kts\\"\\)").containsMatchIn(script),
             "Expected apply(from = \"cleanup-tasks.gradle.kts\")"
         )
     }
