@@ -2,7 +2,7 @@
 
 plugins {
     `kotlin-dsl`
-    id("org.jetbrains.compose") version "1.10.0+dev2947"
+
     id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
 }
 
@@ -17,6 +17,10 @@ repositories {
         url = uri("https://repo.gradle.org/gradle/libs-releases")
         name = "Gradle Releases"
     }
+    maven {
+        url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+        name = "JetBrains Compose Dev"
+    }
 }
 
 // Dependencies required for the convention plugins themselves.
@@ -26,8 +30,11 @@ dependencies {
     implementation("org.junit.jupiter:junit-jupiter-params:5.13.4")
     implementation("org.junit.jupiter:junit-jupiter-engine:5.13.4")
     implementation("org.junit.jupiter:junit-jupiter-api:5.13.4")
-    implementation("com.android.tools.build:gradle:9.0.0-alpha02")
-    implementation("org.jetbrains.compose.runtime:runtime:1.10.0+dev2947")
+    implementation("com.android.tools.build:gradle:9.0.0-alpha05")
+    // Compose Runtime for Compose Compiler compatibility
+    implementation(platform("androidx.compose:compose-bom:2025.09.00"))
+    implementation("androidx.compose.runtime:runtime")
+
     // Test dependencies
 
 }
@@ -51,7 +58,7 @@ gradlePlugin {
     plugins {
         register("genesisAndroidApplication") {
             id = "genesis.android.application"
-            implementationClass = "AndroidApplicationConventionPlugin"
+            implementationClass = "dev.aurakai.auraframefx.buildlogic.AndroidApplicationConventionPlugin"
         }
         register("androidLibrary") {
             id = "genesis.android.library"

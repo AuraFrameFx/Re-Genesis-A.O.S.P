@@ -3,6 +3,7 @@ plugins {
     id("genesis.android.native")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.android)
     // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
 }
 
@@ -48,7 +49,7 @@ dependencies {
     implementation(libs.bundles.compose.ui)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
-    
+
     // Coroutines
     implementation(libs.bundles.coroutines)
     

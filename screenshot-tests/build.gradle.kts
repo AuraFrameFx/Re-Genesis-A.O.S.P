@@ -3,12 +3,11 @@
 plugins {
     base
     id("genesis.android.library")
-    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
 
 }
 
 android {
     namespace = "dev.aurakai.screenshottests"
 }
+
