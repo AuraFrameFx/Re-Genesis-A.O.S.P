@@ -73,4 +73,3 @@ include(
     ":utilities"
 )
 includeBuild("build-logic")
-rootProject.name = "build-logic"

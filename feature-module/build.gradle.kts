@@ -61,7 +61,7 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation(kotlin("stdlib-jdk8"))}
+    implementation(libs.kotlinStdlibJdk8)}
 
 tasks.register("featureStatus") {
     group = "aegenesis"

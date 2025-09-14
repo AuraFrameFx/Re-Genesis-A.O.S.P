@@ -1,16 +1,6 @@
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 // This build script now uses the custom convention plugins for a cleaner setup.
 
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath(libs.gradle)
-    }
-}
-
 plugins {
     id("genesis.android.application")
     alias(libs.plugins.kotlin.compose)

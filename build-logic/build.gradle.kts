@@ -43,9 +43,13 @@ tasks.compileTestKotlin {
     enabled = false
 }
 
+tasks.withType<ProcessResources> {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 gradlePlugin {
     plugins {
-        register("androidApplication") {
+        register("genesisAndroidApplication") {
             id = "genesis.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }

@@ -30,35 +30,6 @@
       <module name="AOSPReGenesis.utilities" target="24" />
       <module name="AOSPReGenesis.utilities.main" target="24" />
       <module name="AOSPReGenesis.utilities.test" target="24" />
-      <module name="ReGenesis" target="24" />
-      <module name="ReGenesis.app" target="24" />
-      <module name="ReGenesis.benchmark" target="24" />
-      <module name="ReGenesis.collab-canvas" target="24" />
-      <module name="ReGenesis.colorblendr" target="24" />
-      <module name="ReGenesis.core-module" target="24" />
-      <module name="ReGenesis.core-module.main" target="24" />
-      <module name="ReGenesis.core-module.test" target="24" />
-      <module name="ReGenesis.datavein-oracle-native" target="24" />
-      <module name="ReGenesis.feature-module" target="24" />
-      <module name="ReGenesis.list" target="24" />
-      <module name="ReGenesis.list.main" target="24" />
-      <module name="ReGenesis.list.test" target="24" />
-      <module name="ReGenesis.main" target="24" />
-      <module name="ReGenesis.module-a" target="24" />
-      <module name="ReGenesis.module-b" target="24" />
-      <module name="ReGenesis.module-c" target="24" />
-      <module name="ReGenesis.module-d" target="24" />
-      <module name="ReGenesis.module-e" target="24" />
-      <module name="ReGenesis.module-f" target="24" />
-      <module name="ReGenesis.oracle-drive-integration" target="24" />
-      <module name="ReGenesis.romtools" target="24" />
-      <module name="ReGenesis.sandbox-ui" target="24" />
-      <module name="ReGenesis.screenshot-tests" target="24" />
-      <module name="ReGenesis.secure-comm" target="24" />
-      <module name="ReGenesis.test" target="24" />
-      <module name="ReGenesis.utilities" target="24" />
-      <module name="ReGenesis.utilities.main" target="24" />
-      <module name="ReGenesis.utilities.test" target="24" />
     </bytecodeTargetLevel>
   </component>
 </project>

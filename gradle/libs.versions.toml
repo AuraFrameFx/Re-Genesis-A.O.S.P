@@ -50,7 +50,7 @@ timber = "5.0.1"
 slf4j = "2.0.17"
 guavaAndroid = "33.4.8-android"
 kotlinxCoroutines = "1.10.2"
-kotlinxSerializationJson = "1.6.3"
+kotlinxSerializationJson = "1.9.0"
 kotlinxDatetime = "0.7.1-0.6.x-compat"
 leakcanary = "2.14"
 

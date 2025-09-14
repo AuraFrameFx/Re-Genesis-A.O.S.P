@@ -9,76 +9,39 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b618587-c9b3-41d7-871c-7888132be4cd" name="Changes" comment="chore: add gc.properties configuration file">
+    <list default="true" id="3b618587-c9b3-41d7-871c-7888132be4cd" name="Changes" comment="chore: update build configuration and dependencies; clean up plugin setup and module references   &#10;&#10;BUILD SUCCESSFUL in 48s&#10;10 actionable tasks: 10 up-to-date !">
+      <change afterPath="$PROJECT_DIR$/build-logic/src/main/resources/META-INF/gradle-plugins/genesis.android.application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.1.0-rc-3/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/noVersion/buildLogic.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/noVersion/buildLogic.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/9.1.0-rc-3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-logic/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build-logic/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/.cmake/api/v1/reply/cache-v2-315bf65d49b8f90c734e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/.cmake/api/v1/reply/cmakeFiles-v1-65716acaac8f15776820.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/.cmake/api/v1/reply/codemodel-v2-888f5e2aa27c982928a6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/.cmake/api/v1/reply/index-2025-09-12T06-56-10-0676.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/.cmake/api/v1/reply/target-datavein_oracle_native-Debug-d7032127efc7a46584cc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/3.31.6/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/3.31.6/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/3.31.6/CompilerIdCXX/CMakeCXXCompilerId.o" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/3.31.6/CompilerIdCXX/CMakeCXXCompilerId.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/datavein_oracle_native.dir/oracle_drive_jni.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/datavein_oracle_native.dir/oracle_drive_jni.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/android_gradle_build_mini.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/build_file_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/build_file_index.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/compile_commands.json.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/compile_commands.json.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/metadata_generation_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/metadata_generation_command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/symbol_folder_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/armeabi-v7a/symbol_folder_index.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/.cmake/api/v1/reply/cache-v2-a991025a034b68d33dc6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/.cmake/api/v1/reply/cmakeFiles-v1-968395e8961fa395ecb0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/.cmake/api/v1/reply/codemodel-v2-27e0b0dc16cb38a563a9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/.cmake/api/v1/reply/index-2025-09-12T06-56-23-0459.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/.cmake/api/v1/reply/target-datavein_oracle_native-Debug-54a2c37d8a638d20c10f.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/3.31.6/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/3.31.6/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/3.31.6/CompilerIdCXX/CMakeCXXCompilerId.o" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/3.31.6/CompilerIdCXX/CMakeCXXCompilerId.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/datavein_oracle_native.dir/oracle_drive_jni.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/datavein_oracle_native.dir/oracle_drive_jni.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/android_gradle_build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/android_gradle_build_mini.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/build_file_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/build_file_index.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/compile_commands.json.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/compile_commands.json.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/metadata_generation_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/metadata_generation_command.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/symbol_folder_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Debug/17276v6v/x86_64/symbol_folder_index.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/tools/debug/x86_64/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/datavein-oracle-native/.cxx/Release/4t456344/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature-module/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/feature-module/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/list/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/list/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/1a2b5424/x86/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/1a2b5424/x86/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-d/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/module-d/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/romtools/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/romtools/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox-ui/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/Debug/1a2b5424/x86/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/Debug/1a2b5424/x86/configure_fingerprint.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/secure-comm/.cxx/tools/debug/x86_64/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +51,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Wehtt\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -100,23 +63,20 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="build-logic" type="f1a62948:ProjectNode" />
+                <item name="ReGenesis" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="build-logic" type="f1a62948:ProjectNode" />
-                <item name="build-logic" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="build-logic" type="f1a62948:ProjectNode" />
-                <item name="build-logic" type="2d1252cf:ModuleNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+                <item name="ReGenesis" type="f1a62948:ProjectNode" />
+                <item name="ReGenesis" type="2d1252cf:ModuleNode" />
               </path>
             </expand>
             <select />
@@ -146,7 +106,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
     <option name="showPreview" value="true" />
   </component>
   <component name="ProjectColorInfo">{
@@ -175,10 +135,10 @@
     "ToolWindow.GitHub Copilot Chat.ShowToolbar": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Autonomous-Revelation",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/ReGenesis",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Suggestions",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
@@ -206,7 +166,7 @@
       <command value="gradle openapigenerate" />
     </option>
   </component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Gradle.C:/Re-Genesis-A.O.S.P [openapigenerate]">
     <configuration name="ReGenesis.app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="ReGenesis.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -416,8 +376,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Re-Genesis-A.O.S.P [tasks]" />
         <item itemvalue="Gradle.C:/Re-Genesis-A.O.S.P [openapigenerate]" />
+        <item itemvalue="Gradle.Re-Genesis-A.O.S.P [tasks]" />
       </list>
     </recent_temporary>
   </component>
@@ -596,7 +556,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757816985002</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="chore: add gc.properties configuration file">
+      <option name="closed" value="true" />
+      <created>1757817411851</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1757817411851</updated>
+    </task>
+    <task id="LOCAL-00022" summary="chore: add gc.properties configuration file">
+      <option name="closed" value="true" />
+      <created>1757817420693</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1757817420693</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -619,6 +595,7 @@
     <MESSAGE value="chore: update project name to ReGenesis and use libs reference for junit platform launcher" />
     <MESSAGE value="chore: update plugin usage, namespace, and dependencies; add C/C++ build timing logs" />
     <MESSAGE value="chore: add gc.properties configuration file" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: add gc.properties configuration file" />
+    <MESSAGE value="chore: update build configuration and dependencies; clean up plugin setup and module references   &#10;&#10;BUILD SUCCESSFUL in 48s&#10;10 actionable tasks: 10 up-to-date !" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update build configuration and dependencies; clean up plugin setup and module references   &#10;&#10;BUILD SUCCESSFUL in 48s&#10;10 actionable tasks: 10 up-to-date !" />
   </component>
 </project>
