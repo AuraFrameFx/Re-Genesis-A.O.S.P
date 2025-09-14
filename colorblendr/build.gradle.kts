@@ -47,5 +47,5 @@ dependencies {
     testImplementation(libs.junit4)
     testImplementation(libs.mockk)
     androidTestImplementation(libs.bundles.testing.android)
-    implementation(kotlin("stdlib-jdk8"))
+    implementation(libs.kotlin.stdlib.jdk8)
 }

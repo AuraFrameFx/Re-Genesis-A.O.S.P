@@ -106,18 +106,14 @@ dependencies {
 
     // ===== NETWORKING =====
     implementation(libs.bundles.network)
-    implementation("com.squareup.moshi:moshi:1.15.0")
+    implementation(libs.squareup.moshi)
 
     // ===== WORKMANAGER & HILT WORKER =====
-    implementation("androidx.hilt:hilt-work:1.3.0")
-    implementation("androidx.work:work-runtime-ktx:2.10.4")
+    implementation(libs.hilt.work)
+    implementation(libs.androidx.work.runtime.ktx)
 
     // ===== FIREBASE =====
-    // By implementing the BOM, we can specify Firebase SDKs without versions
-    implementation(platform(libs.firebase.bom))
-    // This bundle includes Analytics, Crashlytics, Performance, Auth, Firestore, Messaging, and Config
-    implementation(libs.bundles.firebase)
-
+    implementation(libs.firebase.performance)
     // Alternative: Use specific Firebase bundles for modular approach
     // implementation(libs.bundles.firebase.core)     // Analytics, Crashlytics, Performance only
     // implementation(libs.bundles.firebase.auth)     // Authentication
@@ -142,14 +138,20 @@ dependencies {
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))
 
+    // ===== COMPOSE ICONS EXTENDED =====
+    implementation(libs.androidx.compose.material.icons.extended)
+
     // --- TESTING ---
     testImplementation(libs.bundles.testing.unit)
     androidTestImplementation(libs.bundles.testing.android)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing) // For Hilt in Android tests
+    testImplementation(libs.kotlin.test.junit) // For proper JUnit Platform support
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
 
     // --- DEBUGGING ---
     debugImplementation(libs.leakcanary.android)
-    implementation(libs.kotlinStdlibJdk8)
-    implementation(libs.kotlinReflect)
+    implementation(libs.kotlin.stdlib.jdk8)
+    implementation(libs.kotlin.reflect)
 }

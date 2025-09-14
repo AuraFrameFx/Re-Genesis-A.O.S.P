@@ -1,12 +1,11 @@
 // ==== GENESIS PROTOCOL - SANDBOX UI ====
 plugins {
     id("com.android.library") version libs.versions.agp
-    alias(libs.plugins.kotlin.compose)
+    id("org.jetbrains.kotlin.plugin.compose")
     id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.android)
 }
-apply(plugin = "org.jetbrains.compose")
 
 android {
     namespace = "dev.aurakai.auraframefx.sandboxui"
@@ -22,7 +21,7 @@ android {
 
 dependencies {
     api(project(":core-module"))
-    implementation(libs.bundles.androidx.core)
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
@@ -43,7 +42,7 @@ dependencies {
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.hilt.android.testing); kspAndroidTest(libs.hilt.compiler)
-    implementation(kotlin("stdlib-jdk8"))
+    implementation(libs.kotlin.stdlib.jdk8)
 }
 
 tasks.register("sandboxStatus") {

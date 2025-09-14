@@ -1,13 +1,6 @@
 // ==== GENESIS PROTOCOL - FEATURE MODULE ====
 // Primary feature module using convention plugins
 
-plugins {
-    id("com.android.library")
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.compose.compiler)
-    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
-}
 
 buildscript {
     repositories {
@@ -18,6 +11,14 @@ buildscript {
         classpath(libs.gradle)
     }
 }
+
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.plugin.compose")
+    alias(libs.plugins.ksp)
+    // Note: Hilt plugin removed to avoid Android BaseExtension issues, using manual dependencies instead
+}
+
 
 android {
     namespace = "dev.aurakai.auraframefx.featuremodule"
@@ -40,7 +41,7 @@ android {
 
 dependencies {
     api(project(":core-module"))
-    implementation(libs.bundles.androidx.core)
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
@@ -55,8 +56,16 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+    implementation(libs.firebase.analytics.ktx)
+    implementation(libs.firebase.crashlytics.ktx)
+    implementation(libs.firebase.performance)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.messaging)
+    implementation(libs.firebase.config)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.storage)
     implementation(platform(libs.firebase.bom))
-    implementation(libs.bundles.firebase)
     implementation(libs.timber)
     implementation(libs.coil.compose)
     implementation(fileTree("../Libs") { include("*.jar") })
@@ -70,7 +79,7 @@ dependencies {
     androidTestImplementation(libs.hilt.android.testing)
     debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation(kotlin("stdlib-jdk8"))}
+    implementation(libs.kotlin.stdlib.jdk8)}
 
 tasks.register("featureStatus") {
     group = "aegenesis"

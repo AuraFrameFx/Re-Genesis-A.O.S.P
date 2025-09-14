@@ -24,7 +24,7 @@ pluginManagement {
     plugins {
         id("com.android.application") version "9.0.0-alpha02" apply false
         id("com.android.library") version "9.0.0-alpha02" apply false
-        id("org.jetbrains.kotlin.android") version "2.2.0" apply false
+        id("org.jetbrains.kotlin.android") version "2.2.20" apply false
         id("org.jetbrains.kotlin.plugin.compose") version "2.2.20" apply false
         id("com.google.devtools.ksp") version "2.2.20-2.0.3" apply false
     }
@@ -42,37 +42,39 @@ dependencyResolutionManagement {
         maven { url = uri("https://s01.oss.sonatype.org/content/repositories/releases/") }
         maven { url = uri("https://s01.oss.sonatype.org/content/groups/public/") }
     }
-}
+
 
 // Enable modern Gradle features for performance and reliability.
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
+    enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+    enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
-rootProject.name = "ReGenesis"
+    rootProject.name = "ReGenesis"
 
 // ===== MODULE INCLUSION =====
-include(
-    ":app",
-    ":core-module",
-    ":feature-module",
-    ":datavein-oracle-native",
-    ":oracle-drive-integration",
-    ":secure-comm",
-    ":sandbox-ui",
-    ":collab-canvas",
-    ":colorblendr",
-    ":romtools",
-    ":module-a",
-    ":module-b",
-    ":module-c",
-    ":module-d",
-    ":module-e",
-    ":module-f",
-    ":benchmark",
-    ":screenshot-tests",
-    ":jvm-test",
-    ":list",
-    ":utilities"
-)
-includeBuild("build-logic")
-rootProject.name = "build-logic"
+    include(
+        ":app",
+        ":core-module",
+        ":feature-module",
+        ":datavein-oracle-native",
+        ":oracle-drive-integration",
+        ":secure-comm",
+        ":sandbox-ui",
+        ":collab-canvas",
+        ":colorblendr",
+        ":romtools",
+        ":module-a",
+        ":module-b",
+        ":module-c",
+        ":module-d",
+        ":module-e",
+        ":module-f",
+        ":benchmark",
+        ":screenshot-tests",
+        ":jvm-test",
+        ":list",
+        ":utilities"
+    )
+    includeBuild("build-logic")
+    rootProject.name = "build-logic"
+
+}

@@ -21,14 +21,15 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.bundles.coroutines)
-    implementation("androidx.compose.runtime:runtime:1.8.2")
-    // Compose runtime for JVM, add at runtime as needed for Compose features
+    implementation(libs.androidx.compose.runtime)
+    // implementation("androidx.compose.runtime:runtime:1.8.2") // replaced with version catalog
     // Hilt dependencies (add at runtime if needed for DI)
-    implementation("com.google.dagger:hilt-core:2.57.1") // Uncomment if Hilt is needed in this module    // ksp("com.google.dagger:hilt-compiler:2.57.1")
+    implementation(libs.hilt.core) // replaced direct dependency with version catalog
+    // ksp(libs.hilt.compiler) // Uncomment if KSP is needed
+    // testRuntimeOnly("org.junit.platform:junit-platform-launcher") // replaced with version catalog
     testImplementation(libs.junit4)
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.platform.launcher)
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation(libs.mockk)
 }
 

@@ -31,27 +31,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material.icons.extended)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.navigation.compose)
-
-    // Hilt
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-
-    // Coroutines
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
-
-    // Network
-    implementation(libs.retrofit.core)
     implementation(libs.retrofit.converter.kotlinx.serialization)
-    implementation(libs.okhttp.logging.interceptor)
-
-    // Room
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
-
     // Firebase
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics.ktx)
@@ -61,6 +41,7 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.timber)
     implementation(fileTree("../Libs") { include("*.jar") })
+    implementation(libs.kotlin.stdlib.jdk8)
     implementation(libs.gson)
 
     // Testing
@@ -82,7 +63,6 @@ dependencies {
     // Xposed API (using the correct path)
     compileOnly(files("../Libs/api-82.jar"))
     compileOnly(files("../Libs/api-82-sources.jar"))
-    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.register("collabStatus") {

@@ -1,4 +1,4 @@
-// GENESIS PROTOCOL - MODULE B  
+// GENESIS PROTOCOL - MODULE B
 plugins {
     id("genesis.android.library")
     id("genesis.android.compose")
@@ -22,7 +22,8 @@ dependencies {
     ksp(libs.hilt.compiler)
     
     // Add other module-specific dependencies here
-    implementation(kotlin("stdlib-jdk8"))
+
+    implementation(libs.kotlin.stdlib.jdk8)
 }
 
 tasks.register("moduleBStatus") {

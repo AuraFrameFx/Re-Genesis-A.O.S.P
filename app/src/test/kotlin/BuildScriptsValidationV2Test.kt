@@ -1,6 +1,4 @@
 import io.mockk.clearAllMocks
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -419,3 +417,4 @@ class BuildScriptsValidationV2Test {
             )
         assertTrue("release buildType should configure proguardFiles", hasProguardFiles)
     }
+}

@@ -41,7 +41,7 @@ dependencies {
     testRuntimeOnly(libs.junit.jupiter.engine)
     testImplementation(libs.mockk)
     testRuntimeOnly(libs.slf4j.simple)
-    implementation(kotlin("stdlib-jdk8"))
+    implementation(libs.kotlin.stdlib.jdk8)
 }
 
 tasks.test {

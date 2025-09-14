@@ -3,7 +3,7 @@
 
 plugins {
     id("genesis.android.library")
-    alias(libs.plugins.kotlin.compose)
+    id("org.jetbrains.kotlin.plugin.compose")
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.android)
 
@@ -35,23 +35,30 @@ dependencies {
     implementation(libs.bundles.coroutines)
     implementation(libs.bundles.network)
     implementation(platform(libs.firebase.bom))
-    implementation(libs.bundles.firebase)
+    implementation(libs.firebase.analytics.ktx)
+    implementation(libs.firebase.crashlytics.ktx)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.messaging)
+    implementation(libs.firebase.config)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.storage)
     implementation(libs.timber)
     implementation(libs.coil.compose)
-    implementation(libs.mockk.agent)
-    
+
     // Security - BouncyCastle for cryptography
     implementation(libs.bcprov.jdk18on)
     
     // Add other module-specific dependencies here
-    implementation(kotlin("stdlib-jdk8"))
-    
+    implementation(libs.kotlin.stdlib.jdk8)
+
     // Test dependencies
     testImplementation(libs.junit4)
     testImplementation(libs.kotlin.test.junit)
     testImplementation(libs.junit.jupiter.api)
     testImplementation(libs.junit.jupiter.engine)
     testImplementation(libs.mockk.android)
+    testImplementation(libs.mockk.agent)
     testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.hilt.android.testing)
