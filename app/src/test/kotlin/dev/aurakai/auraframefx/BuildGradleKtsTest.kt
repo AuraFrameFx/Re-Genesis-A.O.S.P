@@ -16,15 +16,14 @@ import java.io.File
 class BuildGradleKtsTest {
 
     private fun locateBuildFile(): File {
+        // Correctly locate the build file relative to the project structure
         val candidates = listOf(
-            File("build.gradle.kts"), File("app/build.gradle.kts"), File("../app/build.gradle.kts")
+            File("app/build.gradle.kts"),
+            File("../app/build.gradle.kts"),
+            File("build.gradle.kts")
         )
         return candidates.firstOrNull { it.exists() }
-            ?: error("Unable to locate app/build.gradle.kts. Checked: " + candidates.joinToString { it.path } + "; workingDir=${
-                System.getProperty(
-                    "user.dir"
-                )
-            }")
+            ?: error("Unable to locate app/build.gradle.kts. CWD=${System.getProperty("user.dir")}")
     }
 
     private val buildFile: File by lazy { locateBuildFile() }
@@ -58,12 +57,8 @@ class BuildGradleKtsTest {
             "Expected correct namespace"
         )
 
-        Regex("""compileSdk\s*=\s*(\d+)""").find(script)?.groupValues?.get(1)?.toIntOrNull()
-        Regex("""targetSdk\s*=\s*(\d+)""").find(script)?.groupValues?.get(1)?.toIntOrNull()
-        val compile =
-            Regex("""compileSdk\s*=\s*(\d+)""").find(script)?.groupValues?.get(1)?.toIntOrNull()
-        val target =
-            Regex("""targetSdk\s*=\s*(\d+)""").find(script)?.groupValues?.get(1)?.toIntOrNull()
+        val compile = Regex("""compileSdk\s*=\s*(\d+)""").find(script)?.groupValues?.get(1)?.toIntOrNull()
+        val target = Regex("""targetSdk\s*=\s*(\d+)""").find(script)?.groupValues?.get(1)?.toIntOrNull()
         val min = Regex("""minSdk\s*=\s*(\d+)""").find(script)?.groupValues?.get(1)?.toIntOrNull()
 
         assertEquals(36, compile, "compileSdk should be 36")
@@ -75,148 +70,134 @@ class BuildGradleKtsTest {
     @DisplayName("DefaultConfig: ID, versioning, test runner, vector drawables")
     fun defaultConfig() {
         assertTrue(
-            Regex("""applicationId\s*=\s*"dev\.aurakai\.auraframefx"""
-            ).containsMatchIn(script), "Expected applicationId"
+            Regex("""applicationId\s*=\s*"dev\.aurakai\.auraframefx"""").containsMatchIn(script),
+            "Expected applicationId"
         )
         assertTrue(
-            Regex("versionCode\s*=\s*1\b").containsMatchIn(script), "Expected versionCode = 1"
+            Regex("""versionCode\s*=\s*1\b""").containsMatchIn(script),
+            "Expected versionCode = 1"
         )
         assertTrue(
-            Regex("""versionName\s*=\s*"1\.0\.0-genesis-alpha"""
-            ).containsMatchIn(script), "Expected versionName = 1.0.0-genesis-alpha"
+            Regex("""versionName\s*=\s*"1\.0\.0-genesis-alpha"""").containsMatchIn(script),
+            "Expected versionName = 1.0.0-genesis-alpha"
         )
         assertTrue(
-            Regex("""testInstrumentationRunner\s*=\s*"androidx\.test\.runner\.AndroidJUnitRunner"""
-            ).containsMatchIn(script), "Expected AndroidJUnitRunner"
+            Regex("""testInstrumentationRunner\s*=\s*"androidx\.test\.runner\.AndroidJUnitRunner"""").containsMatchIn(script),
+            "Expected AndroidJUnitRunner"
         )
         assertTrue(
-            Regex("vectorDrawables\s*\{[^}]*useSupportLibrary\s*=\s*true", RegexOption.DOT_MATCHES_ALL).containsMatchIn(script), "Expected vectorDrawables.useSupportLibrary = true"
+            Regex("""vectorDrawables\s*\{[^}]*useSupportLibrary\s*=\s*true""").containsMatchIn(script),
+            "Expected vectorDrawables.useSupportLibrary = true"
         )
     }
-}
 
-@Test
-@DisplayName("Native build guards exist for NDK and CMake")
-fun nativeBuildGuardsPresent() {
-    assertTrue(
-        Regex(
-            """if\s*\(project\.file\("src/main/cpp/CMakeLists\.txt"\)\.exists\(\)\)\s*\{\s*ndk\s*\{""",
-            RegexOption.DOT_MATCHES_ALL
-        ).containsMatchIn(script), "NDK guard not found in defaultConfig"
-    )
-    assertTrue(
-        Regex(
-            """externalNativeBuild\s*\{[^}]*cmake\s*\{\s*path\s*=\s*file\("src/main/cpp/CMakeLists\.txt"\)""",
-            RegexOption.DOT_MATCHES_ALL
-        ).containsMatchIn(script), "externalNativeBuild CMake guard not found"
-    )
-}
+    @Test
+    @DisplayName("Native build guards exist for NDK and CMake")
+    fun nativeBuildGuardsPresent() {
+        assertTrue(
+            Regex("""if\s*\(project\.file\("src/main/cpp/CMakeLists\.txt"\)\.exists\(\)\)\s*\{\s*ndk\s*\{""").containsMatchIn(script),
+            "NDK guard not found in defaultConfig"
+        )
+        assertTrue(
+            Regex("""externalNativeBuild\s*\{[^}]*cmake\s*\{\s*path\s*=\s*file\("src/main/cpp/CMakeLists\.txt"\)""").containsMatchIn(script),
+            "externalNativeBuild CMake guard not found"
+        )
+    }
 
-@Test
-@DisplayName("Build types: release enables minify/shrink and uses proguard files; debug has proguardFiles set")
-fun buildTypesConfigured() {
-    assertTrue(
-        Regex(
-            """buildTypes\s*\{\s*[^}]*release\s*\{[^}]*isMinifyEnabled\s*=\s*true""",
-            RegexOption.DOT_MATCHES_ALL
-        ).containsMatchIn(script), "Expected release.isMinifyEnabled = true"
-    )
-    assertTrue(
-        Regex(
-            """release\s*\{[^}]*isShrinkResources\s*=\s*true""", RegexOption.DOT_MATCHES_ALL
-        ).containsMatchIn(script),
-}
-}
-"Expected release.isShrinkResources = true"
-)
-assertTrue(
-Regex("""proguardFiles\([^)]*\"proguard-android-optimize\.txt\"[^)]*\"proguard-rules\.pro\"[^)]*\)""", RegexOption.DOT_MATCHES_ALL
-).containsMatchIn(script),
-"Expected proguard files configuration"
-)
-assertTrue(
-Regex("buildTypes\\s*\\{[^}]*debug\\s*\\{[^}]*proguardFiles\\(", RegexOption.DOT_MATCHES_ALL).containsMatchIn(script),
-"Expected debug.proguardFiles to be present"
-)
-}
+    @Test
+    @DisplayName("Build types: release enables minify/shrink and uses proguard files")
+    fun buildTypesConfigured() {
+        assertTrue(
+            Regex("""buildTypes\s*\{[^}]*release\s*\{[^}]*isMinifyEnabled\s*=\s*true""").containsMatchIn(script),
+            "Expected release.isMinifyEnabled = true"
+        )
+        assertTrue(
+            Regex("""release\s*\{[^}]*isShrinkResources\s*=\s*true""").containsMatchIn(script),
+            "Expected release.isShrinkResources = true"
+        )
+        assertTrue(
+            Regex("""proguardFiles\([^)]*"proguard-android-optimize\.txt"[^)]*"proguard-rules\.pro"[^)]*\)""").containsMatchIn(script),
+            "Expected release proguard files configuration"
+        )
+        assertTrue(
+            Regex("""buildTypes\s*\{[^}]*debug\s*\{[^}]*proguardFiles\(""").containsMatchIn(script),
+            "Expected debug.proguardFiles to be present"
+        )
+    }
 
-@Test
-@DisplayName("Packaging: resource excludes and jniLibs configuration")
-fun packagingConfigured() {
+    @Test
+    @DisplayName("Packaging: resource excludes and jniLibs configuration")
+    fun packagingConfigured() {
+        val excludes = listOf(
             "/META-INF/LICENSE(.txt)?",
             "/META-INF/NOTICE(.txt)?",
-            "META-INF/.*\.kotlin_module",
-        "/META-INF/LICENSE(\.txt)?",
-            "**/.*\.txt"
-        "META-INF/.*\\.kotlin_module",
-        "**/kotlin/**",
-        "**/.*\\.txt"
-    )
-    excludes.forEach { pattern ->
+            "META-INF/.*\\.kotlin_module",
+            "**/kotlin/**",
+            "**/.*\\.txt"
+        )
+        excludes.forEach { pattern ->
+            assertTrue(
+                Regex(pattern).containsMatchIn(script),
+                "Expected packaging.resources.excludes to contain pattern: $pattern"
+            )
+        }
         assertTrue(
-            Regex(pattern).containsMatchIn(script),
-            "Expected packaging.resources.excludes to contain $pattern"
-            Regex("jniLibs\s*\{[^}]*useLegacyPackaging\s*=\s*false", RegexOption.DOT_MATCHES_ALL).containsMatchIn(script), "Expected jniLibs.useLegacyPackaging = false"
-        Regex(
-            """jniLibs\s*\{[^}]*useLegacyPackaging\s*=\s*false""", RegexOption.DOT_MATCHES_ALL
-            Regex("pickFirsts\s*\+=\s*listOf\(\"(\*\*/)?libc\+\+_shared\.so\",\s*\"(\*\*/)?libjsc\.so\"\)", RegexOption.DOT_MATCHES_ALL).containsMatchIn(script), "Expected jniLibs.pickFirsts to include libc++_shared.so and libjsc.so"
-    assertTrue(
-        Regex("pickFirsts\\s*\\+=\\s*listOf\\(\\"(\\ * \\ * /)?libc\\+\\+_shared\\.so\\",\\s*\\"(\\*\\*/)?libjsc\\.so\\"\\)").containsMatchIn(script),
-    "Expected jniLibs.pickFirsts to include libc++_shared.so and libjsc.so"
-    )
-}
+            Regex("""jniLibs\s*\{[^}]*useLegacyPackaging\s*=\s*false""").containsMatchIn(script),
+            "Expected jniLibs.useLegacyPackaging = false"
+        )
+        assertTrue(
+            Regex("""pickFirsts\s*\+=\s*listOf\("(\*\*/)?libc\+\+_shared\.so",\s*"(\*\*/)?libjsc\.so"\)""").containsMatchIn(script),
+            "Expected jniLibs.pickFirsts to include libc++_shared.so and libjsc.so"
+        )
+    }
 
-@Test
-@DisplayName("Build features: compose/buildConfig enabled and viewBinding disabled")
-fun buildFeaturesConfigured() {
-    assertTrue(
-        Regex(
-            """buildFeatures\s*\{[^}]*compose\s*=\s*true""", RegexOption.DOT_MATCHES_ALL
-        ).containsMatchIn(script), "Expected compose = true"
-    )
-    RegexOption.DOT_MATCHES_ALL
-    assertTrue(
-        Regex(
-            """buildFeatures\s*\{[^}]*buildConfig\s*=\s*true""", RegexOption.DOT_MATCHES_ALL
-        ).containsMatchIn(script), "Expected buildConfig = true"
-    )
-    assertTrue(
-        Regex(
-            """buildFeatures\s*\{[^}]*viewBinding\s*=\s*false""", RegexOption.DOT_MATCHES_ALL
-        ).containsMatchIn(script), "Expected viewBinding = false"
-    )
-}
+    @Test
+    @DisplayName("Build features: compose/buildConfig enabled and viewBinding disabled")
+    fun buildFeaturesConfigured() {
+        assertTrue(
+            Regex("""buildFeatures\s*\{[^}]*compose\s*=\s*true""").containsMatchIn(script),
+            "Expected compose = true"
+        )
+        assertTrue(
+            Regex("""buildFeatures\s*\{[^}]*buildConfig\s*=\s*true""").containsMatchIn(script),
+            "Expected buildConfig = true"
+        )
+        assertTrue(
+            Regex("""buildFeatures\s*\{[^}]*viewBinding\s*=\s*false""").containsMatchIn(script),
+            "Expected viewBinding = false"
+        )
+    }
 
-@Test
-            Regex("sourceCompatibility\s*=\s*JavaVersion\.VERSION_24").containsMatchIn(script),
-        Regex(
-            """sourceCompatibility\s*=\s*JavaVersion\.VERSION_24""
-            ).containsMatchIn(script),
-            Regex("targetCompatibility\s*=\s*JavaVersion\.VERSION_24").containsMatchIn(script),
+    @Test
+    @DisplayName("Compile options: Java 24 compatibility")
+    fun compileOptionsConfigured() {
+        assertTrue(
+            Regex("""sourceCompatibility\s*=\s*JavaVersion\.VERSION_24""").containsMatchIn(script),
+            "Expected sourceCompatibility = JavaVersion.VERSION_24"
+        )
+        assertTrue(
+            Regex("""targetCompatibility\s*=\s*JavaVersion\.VERSION_24""").containsMatchIn(script),
             "Expected targetCompatibility = JavaVersion.VERSION_24"
         )
     }
-    "Expected targetCompatibility = JavaVersion.VERSION_24"
+
     @Test
     @DisplayName("Tasks: cleanKspCache registered and preBuild dependsOn required tasks")
     fun tasksConfigured() {
         assertTrue(
-            Regex("tasks\.register<Delete>\(\"cleanKspCache\"\)").containsMatchIn(script),
-        Regex(
-            """tasks\.register<Delete>\(\"cleanKspCache\"\)""
-            ).containsMatchIn(script),
-            Regex("preBuild\.dependsOn\(\"cleanKspCache\"\)").containsMatchIn(script),
+            Regex("""tasks\.register<Delete>\("cleanKspCache"\)""").containsMatchIn(script),
+            "Expected tasks.register<Delete>(\"cleanKspCache\")"
+        )
+        assertTrue(
+            Regex("""preBuild\.dependsOn\("cleanKspCache"\)""").containsMatchIn(script),
             "Expected preBuild.dependsOn(\"cleanKspCache\")"
         )
         assertTrue(
-            Regex("preBuild\.dependsOn\(:cleanApiGeneration\)").containsMatchIn(script),
-        Regex(
-            """preBuild\.dependsOn\(:cleanApiGeneration\)""
-            ).containsMatchIn(script),
-            Regex("preBuild\.dependsOn\(:openApiGenerate\)").containsMatchIn(script),
+            Regex("""preBuild\.dependsOn\(:cleanApiGeneration\)""").containsMatchIn(script),
+            "Expected preBuild.dependsOn(:cleanApiGeneration)"
         )
         assertTrue(
-            Regex("preBuild\\.dependsOn\\(:openApiGenerate\\)").containsMatchIn(script),
+            Regex("""preBuild\.dependsOn\(:openApiGenerate\)""").containsMatchIn(script),
             "Expected preBuild.dependsOn(:openApiGenerate)"
         )
     }
@@ -225,8 +206,7 @@ fun buildFeaturesConfigured() {
     @DisplayName("Custom status task aegenesisAppStatus is present with expected prints")
     fun statusTaskPresent() {
         assertTrue(
-            Regex(""" tasks \.register\("aegenesisAppStatus"\
-    )""").containsMatchIn(script),
+            Regex("""tasks\.register\("aegenesisAppStatus"\)""").containsMatchIn(script),
             "Expected aegenesisAppStatus task"
         )
         val expectedSnippets = listOf(
@@ -245,7 +225,7 @@ fun buildFeaturesConfigured() {
     @DisplayName("Cleanup tasks script is applied")
     fun cleanupTasksApplied() {
         assertTrue(
-            Regex("apply\\(from\\s*=\\s*\\"cleanup-tasks\\.gradle\\.kts\\"\\)").containsMatchIn(script),
+            Regex("""apply\(from\s*=\s*"cleanup-tasks\.gradle\.kts"\)""").containsMatchIn(script),
             "Expected apply(from = \"cleanup-tasks.gradle.kts\")"
         )
     }
