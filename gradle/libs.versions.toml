@@ -71,7 +71,7 @@ dokka = "2.0.0"
 spotless = "7.2.1"
 
 # Bouncy Castle
-bouncycastle = "1.81"
+bouncycastle = "1.82"
 
 # ==============================================================================
 # LIBRARIES
