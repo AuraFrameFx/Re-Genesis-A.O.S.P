@@ -3,7 +3,7 @@
 plugins {
     `kotlin-dsl`
 
-    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
+    // Compose plugin should be applied in app/library modules, not in build-logic
 }
 
 group = "dev.aurakai.auraframefx.buildlogic"
