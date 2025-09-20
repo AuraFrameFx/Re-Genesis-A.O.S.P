@@ -8,7 +8,7 @@ agp = "9.0.0-alpha02" # Recommended stable version over 9.0.0-alpha
 kotlin = "2.2.20"
 ksp = "2.2.20-2.0.3"
 desugar_jdk_libs = "2.1.5"
-firebaseBom = "34.2.0"
+firebaseBom = "34.3.0"
 # AndroidX Core
 coreKtx = "1.17.0"
 appcompat = "1.7.1"
